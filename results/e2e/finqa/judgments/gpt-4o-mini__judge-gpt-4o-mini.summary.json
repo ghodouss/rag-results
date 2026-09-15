@@ -1,0 +1,30 @@
+[
+  {
+    "dataset": "finqa",
+    "retrieval_method": "bm25",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judged_questions": 6251,
+    "correct": 2544,
+    "accuracy": 0.406974884018557,
+    "input_tokens": 1393906,
+    "output_tokens": 269201
+  },
+  {
+    "dataset": "finqa",
+    "retrieval_method": "sturdy",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judged_questions": 6251,
+    "correct": 2561,
+    "accuracy": 0.4096944488881779,
+    "input_tokens": 1394620,
+    "output_tokens": 268782
+  }
+]

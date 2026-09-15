@@ -1,0 +1,79 @@
+{
+  "experiment": "contractnli-full-dual-label-sturdy-bm25-6173-v1",
+  "scope": "paired full ContractNLI comparison: honest Sturdy A4 +/-2 versus packaged BM25 Top 4",
+  "rows_per_condition": 6173,
+  "sources": {
+    "questions": {
+      "path": "/Users/kian/ML/clojure/worktrees/neural-embeddings-eval/rag-eval/data/contractnli/questions.parquet",
+      "sha256": "82f31a5785eb52e5a1f7668bee546d8a40e89b4fba4bfadf5d77409fb8d578bc"
+    },
+    "sturdy-a4-r2-ranked-windows": {
+      "anchors_path": "/Users/kian/ML/clojure/worktrees/contract-sentence-context/sturdy-search-lab/artifacts/contract-sentence-context/sentence-anchors.parquet",
+      "anchors_sha256": "37d016376d60de4106fe2f5425c016fd965931bbb616e78ab50e75881c7dd505",
+      "snapshot_path": "/Users/kian/ML/clojure/worktrees/contract-sentence-context/sturdy-search-lab/artifacts/contract-sentence-context/sentence-snapshot.parquet",
+      "snapshot_sha256": "c6dd31068928db2afaab207931cffbea0d03a97bbabd556d94ab169823acb72a",
+      "pilot_reference_path": "/Users/kian/ML/clojure/worktrees/neural-embeddings-eval/rag-eval/results/contractnli-sentence-a4-r2-ordering-evidence-1000/inputs/ranked-windows.parquet",
+      "pilot_reference_sha256": "31f1da068b71e055444824efdfd4b30e3bfe9ceaa8bd097824c13f3425588f60",
+      "pilot_reference_exact_context_matches": 1000
+    },
+    "bm25-top4": {
+      "path": "/Users/kian/ML/clojure/misc/rag-eval/artifacts/contractnli/bm25_top4.parquet",
+      "sha256": "c7be2ea6e002ebef45d7284f12b984244955a3ee017e9bf5aff991b3d274918c"
+    }
+  },
+  "generator_models": [
+    "google/gemini-2.5-flash",
+    "openai/gpt-4o-mini"
+  ],
+  "generator_prompt_version": "supplied-generic-dual-label-v1",
+  "generator_system_prompt": "You are a helpful assistant. Answer the question based only on the provided context. If the context does not contain enough information to answer, say so. Be concise.\n\nAnswer True/Entailment or False/Contradiction, followed by a brief explanation.",
+  "generator_user_prompt_template": "Context:\n{context}\n\nQuestion:\n{question}",
+  "judges": {
+    "anthropic/claude-haiku-4.5": {
+      "prompt_version": "supplied-binary-v1",
+      "system_prompt": "You are an expert evaluator. You will be given a question, a golden (reference) answer, and a predicted answer. Determine whether the predicted answer is correct.\n\nAn answer is correct if it conveys the same essential meaning as the golden answer, even if the wording differs. Minor differences in precision, extra context, or phrasing are acceptable. An answer is incorrect if it contradicts the golden answer, misses the key point, or fails to answer the question.\n\nRespond with ONLY a JSON object in this format:\n{\"correct\": true}  or  {\"correct\": false}",
+      "user_prompt_template": "Question:\n{question}\n\nGolden answer:\n{golden_answer}\n\nPredicted answer:\n{generated_answer}",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "correct": {
+            "title": "Correct",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "correct"
+        ],
+        "title": "CorrectJudgment",
+        "type": "object"
+      }
+    },
+    "anthropic/claude-sonnet-4.5": {
+      "prompt_version": "supplied-scale-1-5-v1",
+      "system_prompt": "You are an expert evaluator. You will be given a question, a golden (reference) answer, and a predicted answer. Score the predicted answer on a scale of 1 to 5 based on how well it matches the golden answer.\n\nScoring rubric:\n  5 = Perfect match in meaning (may differ in wording)\n  4 = Mostly correct with minor omissions or extra detail\n  3 = Partially correct, captures the main idea but misses key details\n  2 = Somewhat related but largely incorrect or incomplete\n  1 = Completely wrong or irrelevant\n\nRespond with ONLY a JSON object in this format:\n{\"score\": <1-5>, \"rationale\": \"<one sentence>\"}",
+      "user_prompt_template": "Question:\n{question}\n\nGolden answer:\n{golden}\n\nPredicted answer:\n{predicted}",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "integer"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "rationale"
+        ],
+        "title": "ScaleJudgment",
+        "type": "object"
+      }
+    }
+  },
+  "api_backend": "openrouter"
+}

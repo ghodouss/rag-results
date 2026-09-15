@@ -1,0 +1,14 @@
+[
+  {
+    "dataset": "finqa",
+    "retrieval_method": "bm25",
+    "questions": 6251,
+    "retrieval_errors": 0
+  },
+  {
+    "dataset": "finqa",
+    "retrieval_method": "sturdy",
+    "questions": 6251,
+    "retrieval_errors": 0
+  }
+]

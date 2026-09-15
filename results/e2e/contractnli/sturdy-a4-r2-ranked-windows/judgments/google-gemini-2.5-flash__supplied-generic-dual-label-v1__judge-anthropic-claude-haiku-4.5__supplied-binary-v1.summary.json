@@ -1,0 +1,10 @@
+{
+  "generator_model": "google/gemini-2.5-flash",
+  "generator_prompt_version": "supplied-generic-dual-label-v1",
+  "judge_model": "anthropic/claude-haiku-4.5",
+  "judge_prompt_version": "supplied-binary-v1",
+  "questions": 6173,
+  "judge_errors": 0,
+  "correct": 5080,
+  "accuracy": 0.8229386035963066
+}

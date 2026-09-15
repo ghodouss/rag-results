@@ -1,0 +1,15 @@
+{
+  "generator_model": "google/gemini-2.5-flash",
+  "generator_prompt_version": "supplied-generic-dual-label-v1",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "judge_prompt_version": "supplied-scale-1-5-v1",
+  "questions": 6173,
+  "generation_errors": 0,
+  "judge_errors": 0,
+  "mean_score": 4.380204114693018,
+  "score_1": 815,
+  "score_2": 162,
+  "score_3": 18,
+  "score_4": 44,
+  "score_5": 5134
+}

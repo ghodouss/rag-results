@@ -1,0 +1,32 @@
+{
+  "contractnli": {
+    "expected_questions": 6173,
+    "index_id": "ix-01a06374-dcc9-711a-91ed-77dd0d98da44",
+    "index_name": "contract-nli-v3-improved-20k-no-filter",
+    "retrieval_level": "subparagraph",
+    "filter_field": "doc_id",
+    "semantic_search_weight": 0.30,
+    "semantic_search_cutoff": 0.00001,
+    "top_k": 4
+  },
+  "bioasq": {
+    "expected_questions": 4387,
+    "index_id": "ix-01a05ef3-63f0-724e-9b01-566fa4426ea6",
+    "index_name": "bio-asq-v5-improved",
+    "retrieval_level": "doc",
+    "filter_field": "doc_id",
+    "semantic_search_weight": 0.30,
+    "semantic_search_cutoff": 0.00001,
+    "top_k": 4
+  },
+  "finqa": {
+    "expected_questions": 6251,
+    "index_id": "ix-01a07d68-810e-7222-8e82-efbc498aee94",
+    "index_name": "search-lab-deadline-finqa-v20k-k192",
+    "retrieval_level": "paragraph",
+    "filter_field": "doc_id",
+    "semantic_search_weight": 0.30,
+    "semantic_search_cutoff": 0.00001,
+    "top_k": 4
+  }
+}

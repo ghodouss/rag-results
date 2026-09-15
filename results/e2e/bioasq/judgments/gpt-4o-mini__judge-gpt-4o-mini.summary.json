@@ -1,0 +1,30 @@
+[
+  {
+    "dataset": "bioasq",
+    "retrieval_method": "bm25",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "questions": 4387,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judged_questions": 4387,
+    "correct": 3266,
+    "accuracy": 0.7444723045361294,
+    "input_tokens": 1174392,
+    "output_tokens": 206129
+  },
+  {
+    "dataset": "bioasq",
+    "retrieval_method": "sturdy",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "questions": 4387,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judged_questions": 4387,
+    "correct": 3255,
+    "accuracy": 0.7419648962844768,
+    "input_tokens": 1174401,
+    "output_tokens": 206845
+  }
+]
