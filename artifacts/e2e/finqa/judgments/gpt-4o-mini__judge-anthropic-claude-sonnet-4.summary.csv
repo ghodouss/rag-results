@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,judge_mode,questions,generation_errors,judge_errors,judge_fallbacks,judged_questions,input_tokens,output_tokens,mean_score,scored_questions,ignored_scores,score_1,score_2,score_3,score_4,score_5
+finqa,bm25,gpt-4o-mini,anthropic/claude-sonnet-4,scale-1-5,6251,0,0,0,6251,1372584,458042,3.381378979363302,6251,0,1921,570,7,710,3043
+finqa,sturdy,gpt-4o-mini,anthropic/claude-sonnet-4,scale-1-5,6251,0,0,1,6251,1373362,456261,3.3855383138697808,6251,0,1919,569,17,675,3071

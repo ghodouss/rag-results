@@ -309,6 +309,19 @@ async def judge_scale_one(api, semaphore, row) -> dict:
     }
     async with semaphore:
         try:
+            request_options = {}
+            if SONNET_MODEL != "anthropic/claude-sonnet-4":
+                request_options = {
+                    "response_format": {
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "contractnli_full_matrix_score",
+                            "strict": True,
+                            "schema": ScaleJudgment.model_json_schema(),
+                        },
+                    },
+                    "extra_body": {"provider": {"require_parameters": True}},
+                }
             response = await with_retries(lambda: api.chat.completions.create(
                 model=SONNET_MODEL,
                 messages=[
@@ -316,15 +329,7 @@ async def judge_scale_one(api, semaphore, row) -> dict:
                     {"role": "user", "content": prompt},
                 ],
                 max_tokens=256,
-                response_format={
-                    "type": "json_schema",
-                    "json_schema": {
-                        "name": "contractnli_full_matrix_score",
-                        "strict": True,
-                        "schema": ScaleJudgment.model_json_schema(),
-                    },
-                },
-                extra_body={"provider": {"require_parameters": True}},
+                **request_options,
             ))
             parsed = ScaleJudgment.model_validate_json(
                 json_object_text(completion_text(response))

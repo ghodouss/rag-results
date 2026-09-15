@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5271,
-      "sha256": "ecb9de7a464383c74dcfd3b42e6d682ed7ef3ca69c3327b4bb8be8f88566e1f9"
+      "bytes": 6091,
+      "sha256": "8239b1a0b0e432ef78ca0b9a2cb77d3d34904a1b83d6be9fad59a66f9fe1633a"
     },
     {
       "path": "artifacts/e2e/bioasq/generations/google-gemini-2.5-flash.parquet",
@@ -66,6 +66,23 @@
       "sha256": "ca06fdb03dd41fa466402cccc493b1b78602d65f073607ae8cc790b35e3d4d8f"
     },
     {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 3036870,
+      "sha256": "f08e4cd37b2d7a4d4b0bf943768d195a7cbe97be4946c4ad554f406dba6dce7c",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 551,
+      "sha256": "9ef56634b635f550a84bdc6865798780a9077c1048d56c44377f0a99e88b7b18"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1158,
+      "sha256": "17ac9c4d58278a6a89721c2f0c34cd631e4c287da59c03ea3f2320bb9ddb2599"
+    },
+    {
       "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-anthropic-claude-haiku-4.5.parquet",
       "bytes": 4149811,
       "sha256": "884240473a6352b397f00d9b9038b0b604664a7820c81de89f0ea9e37c2941c9",
@@ -98,6 +115,23 @@
       "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.5.summary.json",
       "bytes": 1127,
       "sha256": "aeb7cfd3e603591562f16a67b6dd5d055a57d660b2e16438aeec4fcb4efa6dc6"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 3451567,
+      "sha256": "e52bcfc2c8a4c3fb818b26aef9c1d651ac48421976a8707c7f3bdad4e109067c",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 526,
+      "sha256": "a37f4776a2f737a6789babf5f797c0d734cb350b195200534aefda2351a47148"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1133,
+      "sha256": "52a732d7bc126e5f13f0b71f023ab45c78b99b56996d21fef62131c9fe876233"
     },
     {
       "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
@@ -212,6 +246,23 @@
       "sha256": "98c7c21c95e7df779d56ef1bea743ca21bae434168511d0c9e87d095f8122c20"
     },
     {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 8992279,
+      "sha256": "a9f3a61abf14c24833b0237796dcca6c4ba509bf7053491f58a522c901e04f8f",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 315,
+      "sha256": "dc6ba66d42aa79d4e7c68ee7ccd66110c3a45cadee4ad6db7688e45d0624a1c0"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 404,
+      "sha256": "9dc0f3c73e3d7c4e4d33aca39f6cade6dfdd2ac6ef7aa1e2efc5df56983ca982"
+    },
+    {
       "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
       "bytes": 8543391,
       "sha256": "027ac80bbe72a230b09a75318f89d8c8ce9b59301a179f655ecf0f6b107bb357",
@@ -246,6 +297,23 @@
       "sha256": "58a0cdb9ee95f81dd1406a747e669945d46a06a960f1f39daf8a9572b5a085ad"
     },
     {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 8758433,
+      "sha256": "ad8e612773a4e4440b9a5a2561ca6ecaf2387e86d9973e6ff03dc4df9a34bdc9",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 309,
+      "sha256": "a5456fdf028d4998e77f85e3f89311505f37f0cf7192241c8519b005bab5f6e2"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 398,
+      "sha256": "855448867808fcef48656c443c23d962bd16b1751d25d3e40392759021a8fe5a"
+    },
+    {
       "path": "artifacts/e2e/contractnli/input/bm25-top4.parquet",
       "bytes": 7295263,
       "sha256": "9e0c15a47f7b2b849745ed26ba32382e5257f8d9ff4c0cd1faf87a23791594cd",
@@ -261,18 +329,18 @@
     },
     {
       "path": "artifacts/e2e/contractnli/paired/summary.csv",
-      "bytes": 2178,
-      "sha256": "5775a151e0556f7364251668b5b2a2787d48605bd16c70fffe9a0e01bcb255a5"
+      "bytes": 2949,
+      "sha256": "fae3e8a23a94593139a95b5f339afd3b3fae33307914f07908bf181e76e20d01"
     },
     {
       "path": "artifacts/e2e/contractnli/paired/summary.json",
-      "bytes": 4203,
-      "sha256": "38e9e174829c1f364ad941c93d1e0fbee5e662231c26b17423154c98b4415277"
+      "bytes": 7534,
+      "sha256": "c05b2c177c96ae5fb690adef860f62a00b39636e5db89991a49f046c523d591d"
     },
     {
       "path": "artifacts/e2e/contractnli/provenance.json",
-      "bytes": 4563,
-      "sha256": "311dedceaf00388a1b1e7cee75f5a334392995649617700e52ae5278ccbd3b4f"
+      "bytes": 6020,
+      "sha256": "e7995c923fc7e1946aa72b2e1e8ccc45f642329ab999a1177e14715037044149"
     },
     {
       "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
@@ -343,6 +411,23 @@
       "sha256": "ecea1d293b991278e53d89a3dff02176e7d9d701352c5dbfe8946159b0b5395a"
     },
     {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 8233991,
+      "sha256": "d1806efba4aa8a8593f4e60ae77249190c3133bad7b5cac7ca45e85a92574c37",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 314,
+      "sha256": "526a41d44927f8328e5c52627145df8bf21e892a8d9f134ab98e3700c5ef8352"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 403,
+      "sha256": "fa6a87c0e18c88c54edb4e9185ec4b4169342a89dcbb2a758b71bc37033087b8"
+    },
+    {
       "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
       "bytes": 7765266,
       "sha256": "6f5121d7ae8a3710cb9d770888be9386fff6f4fb220883f32bbb80cd65166cbf",
@@ -375,6 +460,23 @@
       "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
       "bytes": 401,
       "sha256": "982218654c2341215aca2b546adcb81cd2bb9ff01118046943102f80529de663"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 7972217,
+      "sha256": "149fcaa551bcfa8df20571d3927629ecd38e49947b0b031e9fb052431820fe4d",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 308,
+      "sha256": "8e92b41373c644ad7bd3c1dbde78196b44ad562e8410d168bbc602987f50b878"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 397,
+      "sha256": "74cecfc25551342bb23323c05dc44d9c23586d0cebd099acedc0c77149493940"
     },
     {
       "path": "artifacts/e2e/finqa/generations/google-gemini-2.5-flash.parquet",
@@ -432,6 +534,23 @@
       "sha256": "4ab3e323c292fb713bc8334995859383f03bdf757d14b2ef08836b4ee8c57751"
     },
     {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 1978617,
+      "sha256": "e0512af5dd950b996e3a1e46ce527ab3baae851d4a3150f5b39f425d2e470627",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 545,
+      "sha256": "10ee085f9abf47b9962f39df22bfd418cd6f5afb8f6ae9b826fd442ba86b364a"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1152,
+      "sha256": "fc43b9544ddee2dc1aad2e4fd79ec58d863dcb5cd9b9080bde48dbcd397c20fa"
+    },
+    {
       "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-anthropic-claude-haiku-4.5.parquet",
       "bytes": 3609320,
       "sha256": "db5197bcee9b60a4cff4a2905eac64797068b18efe3156f3a99f1b3af8b734a5",
@@ -464,6 +583,23 @@
       "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.5.summary.json",
       "bytes": 1132,
       "sha256": "6df06a775254637f8498449512700398c32c541f1a51f7dc435a35226a108fde"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 2927786,
+      "sha256": "70791ff4b80dd0578c4f472861ddd099e0779b44d23f637bb2873b4a7550b36c",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 522,
+      "sha256": "8716692c34b5b1b57b0517bc417594663a00ec9c5d20b55be0e893fec8d60f51"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1129,
+      "sha256": "46385b4458ffb6130a14f0adb91bafb223892b61aa9c7952247e5d36254a98bc"
     },
     {
       "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
@@ -511,13 +647,13 @@
     },
     {
       "path": "artifacts/e2e/summary.csv",
-      "bytes": 1265,
-      "sha256": "099476c1470947ab8aa008cbce1cc0aa4f59381a83c367222ea8d0b16942008b"
+      "bytes": 1856,
+      "sha256": "f65133317977be988ff00f7866426eadebc648b91950493ede77a5f1790a50b6"
     },
     {
       "path": "artifacts/e2e/summary.json",
-      "bytes": 2465,
-      "sha256": "f5603a59402df5e1f2f8c0c46926965c08aa9d5d406aa2b6b0b26b3ef8fe98b0"
+      "bytes": 4819,
+      "sha256": "828365b2031f4550d0e59aac39b9b7f723d03553204997b133d4d928e778c9c7"
     },
     {
       "path": "artifacts/legacy-summaries/containment/neural-summary.csv",
@@ -714,8 +850,8 @@
     },
     {
       "path": "provenance/SOURCES.md",
-      "bytes": 8914,
-      "sha256": "a440d4408ede3db0d0f06b1aeb5ede5f2ce5120ac0d372222cf79d78c7efea72"
+      "bytes": 9476,
+      "sha256": "0cad5fccef363ac6950d1a7f96a6114c8380053869e685d906bcf987c6bcc96c"
     },
     {
       "path": "provenance/frozen-pilot/contractnli-sturdy-a4-r2-ranked-windows-1000.parquet",
@@ -731,10 +867,10 @@
     },
     {
       "path": "results/bioasq/bm25.parquet",
-      "bytes": 30314127,
-      "sha256": "e22c91bd6e19f8f7054adf06f707c9df61842a461c12ffd1183ca8403ac73137",
+      "bytes": 31950904,
+      "sha256": "d7e073eba22df633c5f20c23e35fac3440e1ba6df6c189f81a756618af2bbfc6",
       "rows": 4387,
-      "columns": 144
+      "columns": 176
     },
     {
       "path": "results/bioasq/e5.parquet",
@@ -752,17 +888,17 @@
     },
     {
       "path": "results/bioasq/sturdy.parquet",
-      "bytes": 30722420,
-      "sha256": "542f2b3a92d91e908b91be4c5f2c7cfc075cbd7d2c3a593da79a05831f9dbb37",
+      "bytes": 32357708,
+      "sha256": "534d6c7482c5a5bacf3a35c83503f03cb6a8b08f6dcdd7b3646cf58d0a5ac230",
       "rows": 4387,
-      "columns": 144
+      "columns": 176
     },
     {
       "path": "results/contractnli/bm25.parquet",
-      "bytes": 19197681,
-      "sha256": "6c3574a8a9cf743b93b6eeb1d3cf1af526b321d2a7bd5ae92b8ff762cc615624",
+      "bytes": 20960756,
+      "sha256": "ff48c55569b2c0d48646baab780a9ca28a1b9f1e68fe26a87150e82626b0bfa6",
       "rows": 6173,
-      "columns": 116
+      "columns": 148
     },
     {
       "path": "results/contractnli/e5.parquet",
@@ -780,24 +916,24 @@
     },
     {
       "path": "results/contractnli/sturdy.parquet",
-      "bytes": 18279413,
-      "sha256": "069906642b8252253d6b1e045a0234a1891fa3e2ca92568f6c33e3f24b413f63",
+      "bytes": 20019764,
+      "sha256": "45dbde5b7a84a94da9b589949d00d1a4e906adc6aed0a3eee6dec637b3bf505d",
       "rows": 6173,
-      "columns": 114
+      "columns": 146
     },
     {
       "path": "results/finqa/bm25.parquet",
-      "bytes": 17160784,
-      "sha256": "29aaac7d8604aae071df9129c6572e9a260aa52c235984d093ebed2633dd7440",
+      "bytes": 18623218,
+      "sha256": "9cb58f11d0b94b72f9d9b39cf2f9a74dbe8c5279d8ed44cd2383fa7dd9cddc75",
       "rows": 6251,
-      "columns": 142
+      "columns": 174
     },
     {
       "path": "results/finqa/sturdy.parquet",
-      "bytes": 17205231,
-      "sha256": "b709df4649ff239bf6d7cb75f7301fb6dd86631cfb3aecd21b913c30fc815e40",
+      "bytes": 18661547,
+      "sha256": "6141143f2ed8d66dcb10b79e5203193a676a6d6bbc9e4b366850b6a7ce3f1983",
       "rows": 6251,
-      "columns": 142
+      "columns": 174
     },
     {
       "path": "scripts/bioasq/exact.py",
@@ -901,8 +1037,8 @@
     },
     {
       "path": "scripts/judge_answers.py",
-      "bytes": 17379,
-      "sha256": "3c1174313ba761c70d7a6fff02eb6fb55179ff76259babb46ea49de81bcfce5c"
+      "bytes": 19083,
+      "sha256": "36e89ddfb0f5bee435e0b15381efb86e2c2699ad19ea9cc7a4301e634063a1df"
     },
     {
       "path": "scripts/prepare_data.py",
@@ -931,13 +1067,18 @@
     },
     {
       "path": "scripts/run_contractnli_full_prompt_matrix.py",
-      "bytes": 34880,
-      "sha256": "07dcc0e6b8669d814fc644b5a61268484343d2daca72c38eb08aa1c76717e3e4"
+      "bytes": 35104,
+      "sha256": "41f21fdeb92970e760163b3a200c52257d7eadddc1d283eb227232bbd3675b67"
     },
     {
       "path": "scripts/run_contractnli_prompt_pilot.py",
       "bytes": 27156,
       "sha256": "15d2dadb166f898ded5cc2ffe1f1450fd6940dfe407bd1b4a0a61d7a026a50a8"
+    },
+    {
+      "path": "scripts/run_contractnli_sonnet4_judgments.py",
+      "bytes": 3081,
+      "sha256": "de9f60a178a982edb2824c7ce8f841171e844235a7efc4e4e316c55ddde96673"
     },
     {
       "path": "scripts/run_gemini_independent_judges.py",
@@ -955,14 +1096,19 @@
       "sha256": "499c7d66dc234323439fbf9d190a4fde7536b47c9db6f0606289ae47ff7fd510"
     },
     {
+      "path": "scripts/run_sonnet4_judgments.py",
+      "bytes": 2227,
+      "sha256": "419a147dc9d778e92a6439ad20019ed019b0b0dba81558ecef1ccaf0dbfde49e"
+    },
+    {
       "path": "scripts/score_exact.py",
       "bytes": 4469,
       "sha256": "f9fbb35b215002d434d68296a8489a01f816ab3396ce2654804e5e2056de496f"
     },
     {
       "path": "scripts/summarize_results.py",
-      "bytes": 3686,
-      "sha256": "b9d6a7a827ed2c58ce41b0a5ab35ef8d640fff7958fbe9e111ff9895c0ef78c4"
+      "bytes": 4291,
+      "sha256": "c027d86011d09da5e7f81195d34e5432763b48b6bfaf01619eba43cfb056ba2a"
     },
     {
       "path": "scripts/validate_handoff.py",
@@ -976,8 +1122,8 @@
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 10357,
-      "sha256": "a42acfc51b0e3a3da7caac8dc9c4a56daf46c27d10df36a23755a11a7bbce5ef"
+      "bytes": 11319,
+      "sha256": "c83ad982d75680a77794babe7ea69b0ba7b365ab304df826389f417ba4c1e93f"
     },
     {
       "path": "scripts/write_manifest.py",

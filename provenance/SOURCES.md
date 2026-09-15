@@ -89,9 +89,10 @@ Question:
 The independent binary judge is `anthropic/claude-haiku-4.5`, prompt version
 `supplied-binary-v1`. It receives the question, golden answer, and predicted
 answer and returns only structured JSON `{"correct": true|false}`. The
-independent scale judge is `anthropic/claude-sonnet-4.5`, prompt version
-`supplied-scale-1-5-v1`. It uses the supplied 1--5 meaning-match rubric and
-returns structured JSON with integer `score` and a one-sentence `rationale`.
+independent scale judges are `anthropic/claude-sonnet-4.5` and
+`anthropic/claude-sonnet-4`, both using prompt version
+`supplied-scale-1-5-v1`. They use the supplied 1--5 meaning-match rubric and
+return JSON with integer `score` and a one-sentence `rationale`.
 The complete byte-level prompt text, user templates, and JSON schemas are stored
 in `artifacts/e2e/contractnli/provenance.json` and implemented by
 `scripts/run_contractnli_full_dual_label_matrix.py` together with
@@ -120,13 +121,16 @@ The user message is `Context:\n{top-four excerpts}\n\nQuestion:
 {question}\n\nAnswer:`. Independent binary judgments use
 `anthropic/claude-haiku-4.5` and prompt version
 `reference-answer-binary-judge-v2-openrouter`; independent 1--5 judgments use
-`anthropic/claude-sonnet-4.5` and prompt version
-`reference-answer-scale-1-5-judge-v1-openrouter`. Both judges receive the
-question, reference answer, and generated answer through OpenRouter with strict
-JSON schemas. A binary result is `CORRECT` or `INCORRECT`; the scale result is
-an integer score from 1 through 5 plus a concise reason.
+both `anthropic/claude-sonnet-4.5` and `anthropic/claude-sonnet-4` with prompt
+version `reference-answer-scale-1-5-judge-v1-openrouter`. The judges receive the
+question, reference answer, and generated answer through OpenRouter. Haiku 4.5
+and Sonnet 4.5 use provider-enforced JSON schemas. Sonnet 4 uses the identical
+JSON-only prompt with local schema validation because its available OpenRouter
+route does not accept the structured-output parameter. A binary result is
+`CORRECT` or `INCORRECT`; the scale result is an integer score from 1 through 5
+plus a concise reason.
 
-The BioASQ Sonnet provider declined 42 Gemini judgments and 56 GPT-4o-mini
+The BioASQ Sonnet 4.5 provider declined 42 Gemini judgments and 56 GPT-4o-mini
 judgments with `content_filter` on benign benchmark questions involving
 pathogens, vaccines, or toxins. At the user's direction, each refusal is recorded as
 `content_filter_score_excluded` with a null score and excluded from the mean.
@@ -134,6 +138,11 @@ No FinQA judgment used this fallback. Older GPT-4o-mini and GPT-5.6-Luna
 same-model judgments remain under
 `artifacts/e2e/` as historical diagnostics and are not reported as the final
 independent-judge results.
+
+Sonnet 4 produced three unusable responses after validation retries: one
+BioASQ judgment and two FinQA judgments. At the user's direction, each is
+recorded as `judge_failure_scored_incorrect` and counted as score 1. All other
+Sonnet 4 judgments contain validated scores from 1 through 5.
 
 Judgment prompt version `reference-answer-judge-v1` asks whether the candidate
 adequately answers the question relative to the reference answer, allows meaning

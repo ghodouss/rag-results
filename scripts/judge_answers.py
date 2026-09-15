@@ -131,7 +131,20 @@ async def judge_one(
             extra_body = reasoning_arguments(model, reasoning_effort).get(
                 "extra_body", {}
             )
-            extra_body["provider"] = {"require_parameters": True}
+            request_options = {}
+            if model != "anthropic/claude-sonnet-4":
+                extra_body["provider"] = {"require_parameters": True}
+                request_options["response_format"] = {
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": schema_name,
+                        "strict": True,
+                        "schema": result_model.model_json_schema(),
+                    },
+                }
+            if extra_body:
+                request_options["extra_body"] = extra_body
+            max_tokens = 1024 if model == "anthropic/claude-sonnet-4" else 256
             for validation_attempt in range(4):
                 response = await with_retries(lambda: api.chat.completions.create(
                     model=model,
@@ -139,21 +152,29 @@ async def judge_one(
                         {"role": "system", "content": instructions},
                         {"role": "user", "content": prompt},
                     ],
-                    max_tokens=256,
-                    response_format={
-                        "type": "json_schema",
-                        "json_schema": {
-                            "name": schema_name,
-                            "strict": True,
-                            "schema": result_model.model_json_schema(),
-                        },
-                    },
-                    extra_body=extra_body,
+                    max_tokens=max_tokens,
+                    **request_options,
                 ))
                 try:
-                    parsed = result_model.model_validate_json(
-                        json_object_text(completion_text(response))
-                    )
+                    result_text = json_object_text(completion_text(response))
+                    if model == "anthropic/claude-sonnet-4":
+                        payload = json.loads(result_text)
+                        if judge_mode == "scale-1-5" and "reason" not in payload:
+                            payload["reason"] = next(
+                                (
+                                    value for key, value in payload.items()
+                                    if key != "score" and isinstance(value, str)
+                                ),
+                                "No reason returned.",
+                            )
+                        if judge_mode == "scale-1-5":
+                            payload = {
+                                "score": payload.get("score"),
+                                "reason": payload.get("reason"),
+                            }
+                        parsed = result_model.model_validate(payload)
+                    else:
+                        parsed = result_model.model_validate_json(result_text)
                     break
                 except ValueError:
                     message = response.choices[0].message
@@ -327,6 +348,18 @@ async def run(args) -> Path:
             raise ValueError(
                 f"existing output at {prior_path} uses different generated answers"
             )
+        if (
+            args.judge_mode == "scale-1-5"
+            and args.judge_model == "anthropic/claude-sonnet-4"
+        ):
+            failed = prior.judge_error.fillna("").ne("")
+            prior.loc[failed, "score"] = 1
+            prior.loc[failed, "reason"] = (
+                "Judge did not return a usable result; counted as incorrect by "
+                "evaluation policy."
+            )
+            prior.loc[failed, "judge_error"] = ""
+            prior.loc[failed, "judge_fallback"] = "judge_failure_scored_incorrect"
         successful = prior[prior.judge_error.fillna("").eq("")]
     else:
         successful = prior

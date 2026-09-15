@@ -47,8 +47,10 @@ Top-k percentages use those documents as the denominator.
 |---|---|---|---:|---:|
 | Gemini 2.5 Flash | Claude Haiku 4.5 | Correct | 82.2939% | 77.9524% |
 | Gemini 2.5 Flash | Claude Sonnet 4.5 | Mean score (1--5) | 4.3802 | 4.2085 |
+| Gemini 2.5 Flash | Claude Sonnet 4 | Mean score (1--5) | 4.3523 | 4.1827 |
 | GPT-4o mini | Claude Haiku 4.5 | Correct | 84.5780% | 81.3381% |
 | GPT-4o mini | Claude Sonnet 4.5 | Mean score (1--5) | 4.4262 | 4.3016 |
+| GPT-4o mini | Claude Sonnet 4 | Mean score (1--5) | 4.4218 | 4.2856 |
 
 ## BioASQ
 
@@ -76,13 +78,18 @@ Top-k percentages use those documents as the denominator.
 |---|---|---|---:|---:|
 | Gemini 2.5 Flash | Claude Haiku 4.5 | Correct | 71.5067% | 71.8714% |
 | Gemini 2.5 Flash | Claude Sonnet 4.5 | Mean score (1--5) | 3.5700 | 3.5817 |
+| Gemini 2.5 Flash | Claude Sonnet 4 | Mean score (1--5) | 3.5131 | 3.5295 |
 | GPT-4o mini | Claude Haiku 4.5 | Correct | 78.7326% | 78.9150% |
 | GPT-4o mini | Claude Sonnet 4.5 | Mean score (1--5) | 4.0000 | 4.0078 |
+| GPT-4o mini | Claude Sonnet 4 | Mean score (1--5) | 3.9601 | 3.9713 |
 
-Sonnet declined 42 Gemini judgments (20 Sturdy and 22 BM25) and 56 GPT-4o-mini
+Sonnet 4.5 declined 42 Gemini judgments (20 Sturdy and 22 BM25) and 56 GPT-4o-mini
 judgments (29 Sturdy and 27 BM25) because of content filtering. Per the
 evaluation policy, each refusal is retained as `content_filter_score_excluded`
 and excluded from the 1--5 mean.
+
+Sonnet 4 returned one unusable BioASQ response. Per the evaluation policy, it
+is retained as `judge_failure_scored_incorrect` and counted as score 1.
 
 ## FinQA
 
@@ -96,8 +103,13 @@ and excluded from the 1--5 mean.
 |---|---|---|---:|---:|
 | Gemini 2.5 Flash | Claude Haiku 4.5 | Correct | 44.7288% | 43.9130% |
 | Gemini 2.5 Flash | Claude Sonnet 4.5 | Mean score (1--5) | 3.1613 | 3.1235 |
+| Gemini 2.5 Flash | Claude Sonnet 4 | Mean score (1--5) | 3.1184 | 3.0753 |
 | GPT-4o mini | Claude Haiku 4.5 | Correct | 47.1285% | 47.2404% |
 | GPT-4o mini | Claude Sonnet 4.5 | Mean score (1--5) | 3.4190 | 3.4292 |
+| GPT-4o mini | Claude Sonnet 4 | Mean score (1--5) | 3.3855 | 3.3814 |
+
+Sonnet 4 returned two unusable FinQA responses. Per the evaluation policy,
+each is retained as `judge_failure_scored_incorrect` and counted as score 1.
 
 ## Reproduction
 
@@ -108,6 +120,7 @@ uv sync
 uv run python scripts/run_gemini_independent_judges.py bioasq --concurrency 512
 uv run python scripts/run_gemini_independent_judges.py finqa --concurrency 512
 uv run python scripts/run_gpt4o_independent_judges.py --concurrency 512
+uv run python scripts/run_sonnet4_judgments.py --concurrency 256
 uv run python scripts/build_result_parquets.py
 uv run python scripts/summarize_results.py
 uv run python scripts/validate_package.py

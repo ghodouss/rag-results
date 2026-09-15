@@ -73,6 +73,33 @@
         "title": "ScaleJudgment",
         "type": "object"
       }
+    },
+    "anthropic/claude-sonnet-4": {
+      "prompt_version": "supplied-scale-1-5-v1",
+      "system_prompt": "You are an expert evaluator. You will be given a question, a golden (reference) answer, and a predicted answer. Score the predicted answer on a scale of 1 to 5 based on how well it matches the golden answer.\n\nScoring rubric:\n  5 = Perfect match in meaning (may differ in wording)\n  4 = Mostly correct with minor omissions or extra detail\n  3 = Partially correct, captures the main idea but misses key details\n  2 = Somewhat related but largely incorrect or incomplete\n  1 = Completely wrong or irrelevant\n\nRespond with ONLY a JSON object in this format:\n{\"score\": <1-5>, \"rationale\": \"<one sentence>\"}",
+      "user_prompt_template": "Question:\n{question}\n\nGolden answer:\n{golden}\n\nPredicted answer:\n{predicted}",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "integer"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "rationale"
+        ],
+        "title": "ScaleJudgment",
+        "type": "object"
+      },
+      "structured_output": "json-only prompt with local schema validation; OpenRouter route does not accept response_format"
     }
   },
   "api_backend": "openrouter"
