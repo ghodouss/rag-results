@@ -49,12 +49,20 @@ def e2e(dataset: str) -> pd.DataFrame:
                              "judge": judge, "metric": metric,
                              "value": float(frame[column].mean())})
         else:
-            for slug, label in (("gpt_4o_mini", "GPT-4o mini"),
-                                ("gpt_5_6_luna", "GPT-5.6 Luna, low")):
-                column = f"judgment_{slug}__{slug}__verdict"
-                rows.append({"method": method, "generator_and_judge": label,
-                             "metric": "correct",
-                             "value": float(frame[column].eq("CORRECT").mean())})
+            cells = (
+                ("Gemini 2.5 Flash", "Claude Haiku 4.5", "correct",
+                 "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict"),
+                ("Gemini 2.5 Flash", "Claude Sonnet 4.5", "mean_score",
+                 "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score"),
+            )
+            for generator, judge, metric, column in cells:
+                values = frame[column]
+                value = (
+                    float(values.eq("CORRECT").mean())
+                    if metric == "correct" else float(values.mean())
+                )
+                rows.append({"method": method, "generator": generator,
+                             "judge": judge, "metric": metric, "value": value})
     return pd.DataFrame(rows)
 
 

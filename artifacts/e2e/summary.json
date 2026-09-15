@@ -1,10 +1,10 @@
 [
-  {"dataset":"contractnli","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.822939,"bm25":0.779524,"questions":6173,"errors":0},
-  {"dataset":"contractnli","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.380204,"bm25":4.208489,"questions":6173,"errors":0},
-  {"dataset":"contractnli","generator":"openai/gpt-4o-mini","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.845780,"bm25":0.813381,"questions":6173,"errors":0},
-  {"dataset":"contractnli","generator":"openai/gpt-4o-mini","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.426211,"bm25":4.301636,"questions":6173,"errors":0},
-  {"dataset":"bioasq","generator":"gpt-4o-mini","judge":"gpt-4o-mini","metric":"binary_accuracy","sturdy":0.741965,"bm25":0.744472,"questions":4387,"errors":0},
-  {"dataset":"bioasq","generator":"gpt-5.6-luna","judge":"gpt-5.6-luna","metric":"binary_accuracy","sturdy":0.847276,"bm25":0.842261,"questions":4387,"errors":0},
-  {"dataset":"finqa","generator":"gpt-4o-mini","judge":"gpt-4o-mini","metric":"binary_accuracy","sturdy":0.409694,"bm25":0.406975,"questions":6251,"errors":0},
-  {"dataset":"finqa","generator":"gpt-5.6-luna","judge":"gpt-5.6-luna","metric":"binary_accuracy","sturdy":0.756199,"bm25":0.759558,"questions":6251,"errors":0}
+  {"dataset":"contractnli","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.822939,"bm25":0.779524,"questions":6173,"errors":0,"ignored_scores":0},
+  {"dataset":"contractnli","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.380204,"bm25":4.208489,"questions":6173,"errors":0,"ignored_scores":0},
+  {"dataset":"contractnli","generator":"openai/gpt-4o-mini","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.845780,"bm25":0.813381,"questions":6173,"errors":0,"ignored_scores":0},
+  {"dataset":"contractnli","generator":"openai/gpt-4o-mini","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.426211,"bm25":4.301636,"questions":6173,"errors":0,"ignored_scores":0},
+  {"dataset":"bioasq","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.715067,"bm25":0.718714,"questions":4387,"errors":0,"ignored_scores":0},
+  {"dataset":"bioasq","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.569956,"bm25":3.581672,"questions":4387,"errors":0,"ignored_scores":42},
+  {"dataset":"finqa","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.447288,"bm25":0.439130,"questions":6251,"errors":0,"ignored_scores":0},
+  {"dataset":"finqa","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.161254,"bm25":3.123500,"questions":6251,"errors":0,"ignored_scores":0}
 ]

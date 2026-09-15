@@ -9,6 +9,7 @@
 # Local resumable duplicates copied with the completed source run. Final files
 # are packaged alongside them; checkpoints are excluded from Git and manifests.
 results/e2e/**/.checkpoints/
+artifacts/e2e/**/.checkpoints/
 
 # API credentials must remain external.
 .env

@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,judge_mode,questions,generation_errors,judge_errors,judge_fallbacks,judged_questions,input_tokens,output_tokens,correct,accuracy
+bioasq,bm25,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary,4387,0,0,0,4387,2060858,525627,3153,0.7187143834055163
+bioasq,sturdy,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary,4387,0,0,0,4387,2059397,525054,3137,0.7150672441303852

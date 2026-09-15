@@ -44,18 +44,26 @@ JUDGMENT_COUNTS = {
         "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4_5__score": 26554,
     },
     ("bioasq", "sturdy"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 3137,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 15590,
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 3255,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 3717,
     },
     ("bioasq", "bm25"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 3153,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 15634,
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 3266,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 3695,
     },
     ("finqa", "sturdy"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 2796,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 19761,
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 2561,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 4727,
     },
     ("finqa", "bm25"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 2745,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 19525,
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 2544,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 4748,
     },
@@ -117,9 +125,28 @@ def validate_results() -> None:
                     if frame[column].isna().any():
                         raise ValueError(f"{dataset}/{method}: missing {column}")
                 elif column.endswith("__score"):
-                    if frame[column].isna().any() or not frame[column].between(1, 5).all():
+                    prefix = column.removesuffix("__score")
+                    mode_column = prefix + "__judge_mode"
+                    if (
+                        mode_column in frame
+                        and set(frame[mode_column].dropna().astype(str)) == {"binary"}
+                    ):
+                        continue
+                    fallback_column = prefix + "__judge_fallback"
+                    missing = frame[column].isna()
+                    allowed_missing = (
+                        frame[fallback_column].fillna("").astype(str).ne("")
+                        if fallback_column in frame else False
+                    )
+                    if (missing & ~allowed_missing).any() or not frame.loc[~missing, column].between(1, 5).all():
                         raise ValueError(f"{dataset}/{method}: invalid {column}")
                 elif column.endswith("__verdict"):
+                    mode_column = column.removesuffix("__verdict") + "__judge_mode"
+                    if (
+                        mode_column in frame
+                        and set(frame[mode_column].dropna().astype(str)) == {"scale-1-5"}
+                    ):
+                        continue
                     if not set(frame[column].astype(str)) <= {"CORRECT", "INCORRECT"}:
                         raise ValueError(f"{dataset}/{method}: invalid {column}")
 

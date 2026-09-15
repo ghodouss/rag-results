@@ -1,0 +1,42 @@
+[
+  {
+    "dataset": "finqa",
+    "retrieval_method": "bm25",
+    "generator_model": "google/gemini-2.5-flash",
+    "judge_model": "anthropic/claude-sonnet-4.5",
+    "judge_mode": "scale-1-5",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 6251,
+    "input_tokens": 2603222,
+    "output_tokens": 440458,
+    "mean_score": 3.123500239961606,
+    "score_1": 2809,
+    "score_2": 97,
+    "score_3": 20,
+    "score_4": 163,
+    "score_5": 3162
+  },
+  {
+    "dataset": "finqa",
+    "retrieval_method": "sturdy",
+    "generator_model": "google/gemini-2.5-flash",
+    "judge_model": "anthropic/claude-sonnet-4.5",
+    "judge_mode": "scale-1-5",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 6251,
+    "input_tokens": 2603003,
+    "output_tokens": 439949,
+    "mean_score": 3.1612541993281074,
+    "score_1": 2728,
+    "score_2": 129,
+    "score_3": 17,
+    "score_4": 161,
+    "score_5": 3216
+  }
+]

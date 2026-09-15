@@ -2,13 +2,20 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 340,
-      "sha256": "2ce22527923543e0cef051e5b4dd821329aff4679f1e3b0a6c5f2998f6908139"
+      "bytes": 371,
+      "sha256": "d14bc3332b623855de87edbb479f8f263c1c2a3e9bdc28f08290b5bde1a8e6f4"
     },
     {
       "path": "README.md",
-      "bytes": 4326,
-      "sha256": "7864bfdcfea309c6c12aca06f283f986cf1fb04875a39084ebab4c97352d4291"
+      "bytes": 4877,
+      "sha256": "b36cd19c307cdcd86d3afa455a0b0d8e0af67f1ef3eafde31263e0f259b3edde"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/generations/google-gemini-2.5-flash.parquet",
+      "bytes": 2047382,
+      "sha256": "65369445c394a4f425772887acf605c9856bf50fb67a7af2d6b6ddb728598489",
+      "rows": 8774,
+      "columns": 18
     },
     {
       "path": "artifacts/e2e/bioasq/generations/gpt-4o-mini.parquet",
@@ -23,6 +30,40 @@
       "sha256": "a44593f7e85bc4850d5a4c10a19b3aaf421ae4f2fe5059464911bc0a8b408f3d",
       "rows": 8774,
       "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 3677521,
+      "sha256": "83ac0c802faddeb1e44f840fe9981f53913c65a20f050d2024eee67027f59971",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 434,
+      "sha256": "467e837f885ec0fa6a1175e8a1cb429b7661aaf3c5264f65055f133e47b0285c"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 879,
+      "sha256": "bdcf114e6bb9e1a81cd14fc92017c6ba8b9416dd6d1c605c825065f8cf4e5ac1"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.parquet",
+      "bytes": 3314590,
+      "sha256": "5e37e31a9effb7f6fe268909b3e2400045e38e8bc70e11b755a672c0303caf02",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.summary.csv",
+      "bytes": 559,
+      "sha256": "a7e5434da95b7a51e456ff58bca00b93d6fa5a0a40350d5b4bcd3cca108e423b"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.summary.json",
+      "bytes": 1166,
+      "sha256": "ca06fdb03dd41fa466402cccc493b1b78602d65f073607ae8cc790b35e3d4d8f"
     },
     {
       "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
@@ -302,6 +343,13 @@
       "sha256": "982218654c2341215aca2b546adcb81cd2bb9ff01118046943102f80529de663"
     },
     {
+      "path": "artifacts/e2e/finqa/generations/google-gemini-2.5-flash.parquet",
+      "bytes": 1308354,
+      "sha256": "e7e5d3f40bed30f79c91c081671244a2be9c79997349b8ee1e44fac99c184012",
+      "rows": 12502,
+      "columns": 18
+    },
+    {
       "path": "artifacts/e2e/finqa/generations/gpt-4o-mini.parquet",
       "bytes": 1413533,
       "sha256": "12c076aecfac658f6ee78b6116997952308d3f53d2233d0c388fcee5bd627861",
@@ -314,6 +362,40 @@
       "sha256": "9621e942a0c62f0dfacb3830527397bc31ddf168987c79372557e2adda504fc8",
       "rows": 12502,
       "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 2645333,
+      "sha256": "467e0aca9a7b02f94b4ac11023a8df79f82252d30f4cb3352b0ea1a4e16f6d5d",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 433,
+      "sha256": "4fd06db30cafa2726c2fb5915aed2a563382542a525fc105b2ec55ae337ac1fb"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 878,
+      "sha256": "11b34166c6e42b36c81c6eab14ff816cef876d631024a2525c143df92a4f7e02"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.parquet",
+      "bytes": 2184054,
+      "sha256": "f94cc0d39bdeda531ee330333520033fea3fb8038eb137b4895b7b3a596adb67",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.summary.csv",
+      "bytes": 504,
+      "sha256": "db8204a23447bf770cffc2d9b10721e37f4180d520bb1a80aa746546a8840381"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.5.summary.json",
+      "bytes": 1047,
+      "sha256": "4ab3e323c292fb713bc8334995859383f03bdf757d14b2ef08836b4ee8c57751"
     },
     {
       "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
@@ -361,13 +443,13 @@
     },
     {
       "path": "artifacts/e2e/summary.csv",
-      "bytes": 762,
-      "sha256": "9aa180894a31c704a0b8634722eb2b773114adf240647b53ec170889634c7f15"
+      "bytes": 904,
+      "sha256": "76021144e614dc830e20346749a68bef1ba0825b9b85bf94272bcac73c925169"
     },
     {
       "path": "artifacts/e2e/summary.json",
-      "bytes": 1417,
-      "sha256": "f35e0f686ed1d48b15eadf9eefbc942aaec2a54ae447585442a4457779a2355c"
+      "bytes": 1680,
+      "sha256": "d2cfe455d1408689390650a47874ddef387c0026b3ac220c1ddcb53d06c6c275"
     },
     {
       "path": "artifacts/legacy-summaries/containment/neural-summary.csv",
@@ -564,8 +646,8 @@
     },
     {
       "path": "provenance/SOURCES.md",
-      "bytes": 7676,
-      "sha256": "f35fa45f0d41472a17341ff4e2097d5e47612c528238989355e674e419da51c2"
+      "bytes": 8619,
+      "sha256": "cbbcefabaa43b3c8d485e4ed4f0829790af10e3973a276387bd6f905d15dce3f"
     },
     {
       "path": "provenance/frozen-pilot/contractnli-sturdy-a4-r2-ranked-windows-1000.parquet",
@@ -581,10 +663,10 @@
     },
     {
       "path": "results/bioasq/bm25.parquet",
-      "bytes": 25600089,
-      "sha256": "5d8f1b281f763c1ccd344217db838e6e457500c06b1ceb5fde6ebf0930264168",
+      "bytes": 28094337,
+      "sha256": "4b01c2b50e32a34a041b3e32f6b22216fa8eed1ad812b4353bde9b4e8d18dc43",
       "rows": 4387,
-      "columns": 68
+      "columns": 112
     },
     {
       "path": "results/bioasq/e5.parquet",
@@ -602,10 +684,10 @@
     },
     {
       "path": "results/bioasq/sturdy.parquet",
-      "bytes": 26013947,
-      "sha256": "44d9975a8623b364d23327e76d0f74d26a1bbd4a90eab4c79b9cc18c460ddcfe",
+      "bytes": 28493151,
+      "sha256": "2032273fb42efefe24fdc7d1cfe161b378076f2fa2e06147b54d518b7ca5be50",
       "rows": 4387,
-      "columns": 68
+      "columns": 112
     },
     {
       "path": "results/contractnli/bm25.parquet",
@@ -637,17 +719,17 @@
     },
     {
       "path": "results/finqa/bm25.parquet",
-      "bytes": 13013930,
-      "sha256": "d92fec90b7db0cfada05eeedbca45bffc724e5c9aa4629580cf6b6e0c5af46a1",
+      "bytes": 15055960,
+      "sha256": "cdb5a78d4ddb45dc2ee5f4b11d0352ac631ff38b95e3c70f6e4052e0dbfad5c0",
       "rows": 6251,
-      "columns": 66
+      "columns": 110
     },
     {
       "path": "results/finqa/sturdy.parquet",
-      "bytes": 13064749,
-      "sha256": "c75ef379da1e87b078e84e02ec563bfc0a776a62583bc84222d3b587ff7ba1e0",
+      "bytes": 15102678,
+      "sha256": "ef5939db2fde4a04d7d6334b0295224e8c9e892464e3c13db978a78f7246c7cc",
       "rows": 6251,
-      "columns": 66
+      "columns": 110
     },
     {
       "path": "scripts/bioasq/exact.py",
@@ -681,8 +763,8 @@
     },
     {
       "path": "scripts/build_result_parquets.py",
-      "bytes": 14361,
-      "sha256": "81245e2047cb1b49a9bc63503af9843b205d9f4d107904b885719957a665b328"
+      "bytes": 14412,
+      "sha256": "634753a8e5e731a49e7159f80b4a06a47649c588777a244f8e0560cec15b30c9"
     },
     {
       "path": "scripts/build_retrieval_qrels.py",
@@ -741,8 +823,8 @@
     },
     {
       "path": "scripts/generate_answers.py",
-      "bytes": 6625,
-      "sha256": "56c383ff571b3c5569bea74c09220f41a42337bd9607aa5f78938851f8ec7b2c"
+      "bytes": 9656,
+      "sha256": "2ac569c297e772ca0bbe8ce9e4e6dbe2ec41e143df6ecce54888c505ce2a69bb"
     },
     {
       "path": "scripts/import_neural_results.py",
@@ -751,8 +833,8 @@
     },
     {
       "path": "scripts/judge_answers.py",
-      "bytes": 8936,
-      "sha256": "8b0722c5b4c573adcd71cb4b772f6d86d9e58de3990e7b9f7d5ac31e8f40aaa4"
+      "bytes": 17379,
+      "sha256": "3c1174313ba761c70d7a6fff02eb6fb55179ff76259babb46ea49de81bcfce5c"
     },
     {
       "path": "scripts/prepare_data.py",
@@ -790,6 +872,11 @@
       "sha256": "15d2dadb166f898ded5cc2ffe1f1450fd6940dfe407bd1b4a0a61d7a026a50a8"
     },
     {
+      "path": "scripts/run_gemini_independent_judges.py",
+      "bytes": 1928,
+      "sha256": "54914e873355a47fe416b1da7784511f2bc78e8fa0fd56d4c9cc7debf05efdb9"
+    },
+    {
       "path": "scripts/run_llm_eval_suite.py",
       "bytes": 2038,
       "sha256": "499c7d66dc234323439fbf9d190a4fde7536b47c9db6f0606289ae47ff7fd510"
@@ -801,8 +888,8 @@
     },
     {
       "path": "scripts/summarize_results.py",
-      "bytes": 3031,
-      "sha256": "74706e6ae0422cf442c7fd05375000359fc00be507dcc17e51f7b66e0777df35"
+      "bytes": 3399,
+      "sha256": "5355145988fc1abc4243652079f9a243517e2b353247f73801b48e67687597e2"
     },
     {
       "path": "scripts/validate_handoff.py",
@@ -816,8 +903,8 @@
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 8089,
-      "sha256": "79d18c5100031c3a9020fbc826e3075eb341db24edfadf8002f0e15b3cc36f5d"
+      "bytes": 9757,
+      "sha256": "8001f4869665414853f1593cc9c775dddffe583275b11c18bbbdf463c39a7b00"
     },
     {
       "path": "scripts/write_manifest.py",

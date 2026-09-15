@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,judge_mode,questions,generation_errors,judge_errors,judge_fallbacks,judged_questions,input_tokens,output_tokens,correct,accuracy
+finqa,bm25,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary,6251,0,0,0,6251,2503206,581972,2745,0.43912973924172133
+finqa,sturdy,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary,6251,0,0,0,6251,2502987,582472,2796,0.4472884338505839

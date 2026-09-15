@@ -234,6 +234,7 @@ GENERATION_FIELDS = (
 
 JUDGMENT_FIELDS = (
     "judge_model", "judge_reasoning_effort", "judge_prompt_version",
+    "judge_mode", "api_backend", "judge_fallback",
     "judge_system_prompt_sha256", "judge_user_prompt_sha256", "judge_correct",
     "score", "rationale", "verdict", "reason", "judge_error",
     "judge_response_id", "judge_input_tokens", "judge_output_tokens",

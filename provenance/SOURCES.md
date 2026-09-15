@@ -103,7 +103,8 @@ public evaluation metric, and is intentionally absent from public summaries.
 
 ## BioASQ and FinQA generation and judging
 
-Both datasets use generator prompt version `grounded-answer-v1`:
+The final independent-judge matrices use `google/gemini-2.5-flash` through
+OpenRouter with generator prompt version `grounded-answer-v2-openrouter`:
 
 ```text
 You are a question-answering assistant.
@@ -114,17 +115,30 @@ the supplied context.
 ```
 
 The user message is `Context:\n{top-four excerpts}\n\nQuestion:
-{question}\n\nAnswer:`. Generators are `gpt-4o-mini` and `gpt-5.6-luna`;
-Luna uses reasoning effort `low`, while GPT-4o mini records
-`not_supported`.
+{question}\n\nAnswer:`. Independent binary judgments use
+`anthropic/claude-haiku-4.5` and prompt version
+`reference-answer-binary-judge-v2-openrouter`; independent 1--5 judgments use
+`anthropic/claude-sonnet-4.5` and prompt version
+`reference-answer-scale-1-5-judge-v1-openrouter`. Both judges receive the
+question, reference answer, and generated answer through OpenRouter with strict
+JSON schemas. A binary result is `CORRECT` or `INCORRECT`; the scale result is
+an integer score from 1 through 5 plus a concise reason.
+
+The BioASQ Sonnet provider declined 42 judgments with `content_filter` on
+benign benchmark questions involving pathogens, vaccines, or toxins. At the
+user's direction, each refusal is recorded as
+`content_filter_score_excluded` with a null score and excluded from the mean.
+No FinQA judgment used this fallback. Older GPT-4o-mini and GPT-5.6-Luna
+same-model runs remain under
+`artifacts/e2e/` as historical diagnostics and are not reported as the final
+independent-judge results.
 
 Judgment prompt version `reference-answer-judge-v1` asks whether the candidate
 adequately answers the question relative to the reference answer, allows meaning
 equivalence without exact wording, and emits structured `CORRECT` or `INCORRECT`
 plus a reason. Each output was judged by the same model that generated it. These
 complete same-model diagnostics are useful, but they are not independent
-adjudication. Exact prompts and layouts are implemented in
-`scripts/generate_answers.py` and `scripts/judge_answers.py`.
+adjudication. Their artifacts retain the historical prompt-version metadata.
 
 ## Reproduction and validation map
 
@@ -137,7 +151,8 @@ adjudication. Exact prompts and layouts are implemented in
 - Import supplied embedding conditions with `scripts/import_neural_results.py`.
 - Score exact containment with `scripts/contractnli/exact.py` and
   `scripts/bioasq/exact.py`.
-- Run/resume BioASQ and FinQA E2E: `scripts/run_llm_eval_suite.py`.
+- Run/resume the final BioASQ and FinQA independent-judge E2E matrices:
+  `scripts/run_gemini_independent_judges.py`.
 - Run/resume ContractNLI E2E with `scripts/contractnli/generate.py` and
   `scripts/contractnli/judge.py`.
 - Validate identities, coverage, errors, summaries, and hosting limits with

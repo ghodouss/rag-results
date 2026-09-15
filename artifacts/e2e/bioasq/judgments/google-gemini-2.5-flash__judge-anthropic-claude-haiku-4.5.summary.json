@@ -1,0 +1,34 @@
+[
+  {
+    "dataset": "bioasq",
+    "retrieval_method": "bm25",
+    "generator_model": "google/gemini-2.5-flash",
+    "judge_model": "anthropic/claude-haiku-4.5",
+    "judge_mode": "binary",
+    "questions": 4387,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 4387,
+    "input_tokens": 2060858,
+    "output_tokens": 525627,
+    "correct": 3153,
+    "accuracy": 0.7187143834055163
+  },
+  {
+    "dataset": "bioasq",
+    "retrieval_method": "sturdy",
+    "generator_model": "google/gemini-2.5-flash",
+    "judge_model": "anthropic/claude-haiku-4.5",
+    "judge_mode": "binary",
+    "questions": 4387,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 4387,
+    "input_tokens": 2059397,
+    "output_tokens": 525054,
+    "correct": 3137,
+    "accuracy": 0.7150672441303852
+  }
+]
