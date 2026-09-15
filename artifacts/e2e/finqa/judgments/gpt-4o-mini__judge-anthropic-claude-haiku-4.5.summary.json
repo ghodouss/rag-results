@@ -1,0 +1,34 @@
+[
+  {
+    "dataset": "finqa",
+    "retrieval_method": "bm25",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "anthropic/claude-haiku-4.5",
+    "judge_mode": "binary",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 6251,
+    "input_tokens": 2660290,
+    "output_tokens": 627991,
+    "correct": 2953,
+    "accuracy": 0.47240441529355304
+  },
+  {
+    "dataset": "finqa",
+    "retrieval_method": "sturdy",
+    "generator_model": "gpt-4o-mini",
+    "judge_model": "anthropic/claude-haiku-4.5",
+    "judge_mode": "binary",
+    "questions": 6251,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "judge_fallbacks": 0,
+    "judged_questions": 6251,
+    "input_tokens": 2661253,
+    "output_tokens": 628863,
+    "correct": 2946,
+    "accuracy": 0.47128459446488563
+  }
+]

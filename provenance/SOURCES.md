@@ -104,7 +104,9 @@ public evaluation metric, and is intentionally absent from public summaries.
 ## BioASQ and FinQA generation and judging
 
 The final independent-judge matrices use `google/gemini-2.5-flash` through
-OpenRouter with generator prompt version `grounded-answer-v2-openrouter`:
+OpenRouter with generator prompt version `grounded-answer-v2-openrouter`, plus
+the existing direct-OpenAI `gpt-4o-mini` generations with prompt version
+`grounded-answer-v1`. The prompt text is identical:
 
 ```text
 You are a question-answering assistant.
@@ -124,12 +126,12 @@ question, reference answer, and generated answer through OpenRouter with strict
 JSON schemas. A binary result is `CORRECT` or `INCORRECT`; the scale result is
 an integer score from 1 through 5 plus a concise reason.
 
-The BioASQ Sonnet provider declined 42 judgments with `content_filter` on
-benign benchmark questions involving pathogens, vaccines, or toxins. At the
-user's direction, each refusal is recorded as
+The BioASQ Sonnet provider declined 42 Gemini judgments and 56 GPT-4o-mini
+judgments with `content_filter` on benign benchmark questions involving
+pathogens, vaccines, or toxins. At the user's direction, each refusal is recorded as
 `content_filter_score_excluded` with a null score and excluded from the mean.
 No FinQA judgment used this fallback. Older GPT-4o-mini and GPT-5.6-Luna
-same-model runs remain under
+same-model judgments remain under
 `artifacts/e2e/` as historical diagnostics and are not reported as the final
 independent-judge results.
 
@@ -153,6 +155,8 @@ adjudication. Their artifacts retain the historical prompt-version metadata.
   `scripts/bioasq/exact.py`.
 - Run/resume the final BioASQ and FinQA independent-judge E2E matrices:
   `scripts/run_gemini_independent_judges.py`.
+- Run/resume Haiku and Sonnet judging of the existing GPT-4o-mini generations:
+  `scripts/run_gpt4o_independent_judges.py`.
 - Run/resume ContractNLI E2E with `scripts/contractnli/generate.py` and
   `scripts/contractnli/judge.py`.
 - Validate identities, coverage, errors, summaries, and hosting limits with

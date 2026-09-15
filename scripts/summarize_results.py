@@ -54,6 +54,10 @@ def e2e(dataset: str) -> pd.DataFrame:
                  "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict"),
                 ("Gemini 2.5 Flash", "Claude Sonnet 4.5", "mean_score",
                  "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score"),
+                ("GPT-4o mini", "Claude Haiku 4.5", "correct",
+                 "judgment_gpt_4o_mini__anthropic_claude_haiku_4_5__verdict"),
+                ("GPT-4o mini", "Claude Sonnet 4.5", "mean_score",
+                 "judgment_gpt_4o_mini__anthropic_claude_sonnet_4_5__score"),
             )
             for generator, judge, metric, column in cells:
                 values = frame[column]

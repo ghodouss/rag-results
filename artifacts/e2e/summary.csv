@@ -5,5 +5,9 @@ contractnli,openai/gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.8457
 contractnli,openai/gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,4.426211,4.301636,6173,0,0
 bioasq,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary_accuracy,0.715067,0.718714,4387,0,0
 bioasq,google/gemini-2.5-flash,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.569956,3.581672,4387,0,42
+bioasq,gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.787326,0.789150,4387,0,0
+bioasq,gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,4.000000,4.007798,4387,0,56
 finqa,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary_accuracy,0.447288,0.439130,6251,0,0
 finqa,google/gemini-2.5-flash,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.161254,3.123500,6251,0,0
+finqa,gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.471285,0.472404,6251,0,0
+finqa,gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.418973,3.429211,6251,0,0

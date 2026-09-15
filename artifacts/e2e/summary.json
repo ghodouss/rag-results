@@ -5,6 +5,10 @@
   {"dataset":"contractnli","generator":"openai/gpt-4o-mini","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.426211,"bm25":4.301636,"questions":6173,"errors":0,"ignored_scores":0},
   {"dataset":"bioasq","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.715067,"bm25":0.718714,"questions":4387,"errors":0,"ignored_scores":0},
   {"dataset":"bioasq","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.569956,"bm25":3.581672,"questions":4387,"errors":0,"ignored_scores":42},
+  {"dataset":"bioasq","generator":"gpt-4o-mini","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.787326,"bm25":0.789150,"questions":4387,"errors":0,"ignored_scores":0},
+  {"dataset":"bioasq","generator":"gpt-4o-mini","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":4.000000,"bm25":4.007798,"questions":4387,"errors":0,"ignored_scores":56},
   {"dataset":"finqa","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.447288,"bm25":0.439130,"questions":6251,"errors":0,"ignored_scores":0},
-  {"dataset":"finqa","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.161254,"bm25":3.123500,"questions":6251,"errors":0,"ignored_scores":0}
+  {"dataset":"finqa","generator":"google/gemini-2.5-flash","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.161254,"bm25":3.123500,"questions":6251,"errors":0,"ignored_scores":0},
+  {"dataset":"finqa","generator":"gpt-4o-mini","judge":"anthropic/claude-haiku-4.5","metric":"binary_accuracy","sturdy":0.471285,"bm25":0.472404,"questions":6251,"errors":0,"ignored_scores":0},
+  {"dataset":"finqa","generator":"gpt-4o-mini","judge":"anthropic/claude-sonnet-4.5","metric":"mean_score_1_to_5","sturdy":3.418973,"bm25":3.429211,"questions":6251,"errors":0,"ignored_scores":0}
 ]

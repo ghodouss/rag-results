@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,judge_mode,questions,generation_errors,judge_errors,judge_fallbacks,judged_questions,input_tokens,output_tokens,correct,accuracy
+finqa,bm25,gpt-4o-mini,anthropic/claude-haiku-4.5,binary,6251,0,0,0,6251,2660290,627991,2953,0.47240441529355304
+finqa,sturdy,gpt-4o-mini,anthropic/claude-haiku-4.5,binary,6251,0,0,0,6251,2661253,628863,2946,0.47128459446488563

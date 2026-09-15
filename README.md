@@ -76,10 +76,13 @@ Top-k percentages use those documents as the denominator.
 |---|---|---|---:|---:|
 | Gemini 2.5 Flash | Claude Haiku 4.5 | Correct | 71.5067% | 71.8714% |
 | Gemini 2.5 Flash | Claude Sonnet 4.5 | Mean score (1--5) | 3.5700 | 3.5817 |
+| GPT-4o mini | Claude Haiku 4.5 | Correct | 78.7326% | 78.9150% |
+| GPT-4o mini | Claude Sonnet 4.5 | Mean score (1--5) | 4.0000 | 4.0078 |
 
-Sonnet declined 42 of the 8,774 BioASQ judgments because of content filtering
-(20 Sturdy and 22 BM25). Per the evaluation policy, each refusal is retained as
-`content_filter_score_excluded` and excluded from the 1--5 mean.
+Sonnet declined 42 Gemini judgments (20 Sturdy and 22 BM25) and 56 GPT-4o-mini
+judgments (29 Sturdy and 27 BM25) because of content filtering. Per the
+evaluation policy, each refusal is retained as `content_filter_score_excluded`
+and excluded from the 1--5 mean.
 
 ## FinQA
 
@@ -93,6 +96,8 @@ Sonnet declined 42 of the 8,774 BioASQ judgments because of content filtering
 |---|---|---|---:|---:|
 | Gemini 2.5 Flash | Claude Haiku 4.5 | Correct | 44.7288% | 43.9130% |
 | Gemini 2.5 Flash | Claude Sonnet 4.5 | Mean score (1--5) | 3.1613 | 3.1235 |
+| GPT-4o mini | Claude Haiku 4.5 | Correct | 47.1285% | 47.2404% |
+| GPT-4o mini | Claude Sonnet 4.5 | Mean score (1--5) | 3.4190 | 3.4292 |
 
 ## Reproduction
 
@@ -102,6 +107,7 @@ Use Python 3.11 or newer:
 uv sync
 uv run python scripts/run_gemini_independent_judges.py bioasq --concurrency 512
 uv run python scripts/run_gemini_independent_judges.py finqa --concurrency 512
+uv run python scripts/run_gpt4o_independent_judges.py --concurrency 512
 uv run python scripts/build_result_parquets.py
 uv run python scripts/summarize_results.py
 uv run python scripts/validate_package.py
