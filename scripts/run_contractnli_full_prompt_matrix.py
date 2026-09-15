@@ -30,7 +30,7 @@ from rag_eval.llm import (
 )
 
 
-RESULTS_ROOT = ROOT / "results" / "contractnli-full-true-false-matrix-6173"
+RESULTS_ROOT = ROOT / "artifacts" / "experiments" / "contractnli-full-true-false-matrix-6173"
 QUESTIONS_SOURCE = ROOT / "data/contractnli/questions.parquet"
 SENTENCE_CACHE = ROOT / "data/contractnli/sentence-source"
 SENTENCE_ANCHORS_SOURCE = SENTENCE_CACHE / "sentence-anchors.parquet"

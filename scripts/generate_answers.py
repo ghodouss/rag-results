@@ -99,7 +99,8 @@ async def run(args) -> Path:
         frame = frame.head(args.limit)
 
     slug = model_slug(args.model)
-    target = args.output or ROOT / "results" / args.dataset / "generations" / f"{slug}.parquet"
+    target = (args.output or ROOT / "artifacts" / "e2e" / args.dataset /
+              "generations" / f"{slug}.parquet")
     checkpoint = target.parent / ".checkpoints" / target.name
     prior_path = target if target.exists() else checkpoint
     prior = pd.read_parquet(prior_path) if prior_path.exists() else pd.DataFrame()

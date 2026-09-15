@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODELS = ("gpt-4o-mini", "gpt-5.6-luna")
-DEFAULT_DATASETS = ("contractnli", "bioasq", "finqa")
+DEFAULT_DATASETS = ("bioasq", "finqa")
 
 
 def execute(command: list[str]) -> None:
@@ -31,7 +31,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--models", nargs="+", default=DEFAULT_MODELS)
     parser.add_argument("--datasets", nargs="+", default=DEFAULT_DATASETS,
-                        choices=("contractnli", "bioasq", "finqa"))
+                        choices=("bioasq", "finqa"))
     parser.add_argument("--concurrency-per-job", type=int, default=8)
     parser.add_argument("--parallel-jobs", type=int, default=4)
     args = parser.parse_args()

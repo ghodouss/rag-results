@@ -137,7 +137,7 @@ def build(dataset, methods, allow_partial=False):
     distributable = result.drop(columns=transient_context)
     target = ROOT / "data" / dataset / "retrieval_results.parquet"
     atomic_parquet(distributable, target)
-    result_dir = ROOT / "results" / dataset
+    result_dir = ROOT / "artifacts" / "legacy-summaries" / dataset
     result_dir.mkdir(parents=True, exist_ok=True)
     (result_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     pd.DataFrame(summary).to_csv(result_dir / "summary.csv", index=False)

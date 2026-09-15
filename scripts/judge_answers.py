@@ -129,7 +129,7 @@ def write_summary(frame: pd.DataFrame, target: Path) -> None:
 
 async def run(args) -> Path:
     generator_slug = model_slug(args.generator_model)
-    source = (args.input or ROOT / "results" / args.dataset / "generations" /
+    source = (args.input or ROOT / "artifacts" / "e2e" / args.dataset / "generations" /
               f"{generator_slug}.parquet")
     generations = pd.read_parquet(source)
     expected_model = set(generations.generator_model.astype(str))
@@ -139,7 +139,7 @@ async def run(args) -> Path:
         generations = generations.head(args.limit)
 
     judge_slug = model_slug(args.judge_model)
-    target = (args.output or ROOT / "results" / args.dataset / "judgments" /
+    target = (args.output or ROOT / "artifacts" / "e2e" / args.dataset / "judgments" /
               f"{generator_slug}__judge-{judge_slug}.parquet")
     checkpoint = target.parent / ".checkpoints" / target.name
     prior_path = target if target.exists() else checkpoint

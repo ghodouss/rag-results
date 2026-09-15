@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate packaged identities, API outputs, summaries, sizes, and manifest."""
+"""Validate the ten canonical result Parquets and the package manifest."""
 from __future__ import annotations
 
 import importlib.util
@@ -11,6 +11,55 @@ import pyarrow.parquet as pq
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_BYTES = 49 * 1024 * 1024
+ROWS = {"contractnli": 6173, "bioasq": 4387, "finqa": 6251}
+METHODS = {
+    "contractnli": ("sturdy", "bm25", "e5", "openai"),
+    "bioasq": ("sturdy", "bm25", "e5", "openai"),
+    "finqa": ("sturdy", "bm25"),
+}
+RETRIEVAL_ERRORS = {("bioasq", "sturdy"): 23}
+
+EXACT_COUNTS = {
+    ("contractnli", "sturdy"): (2938, 3322, 3489, 3577, 3852),
+    ("contractnli", "bm25"): (1994, 2635, 2922, 3094, 3852),
+    ("contractnli", "e5"): (1582, 2202, 2582, 2828, 3852),
+    ("contractnli", "openai"): (2343, 2861, 3085, 3201, 3852),
+    ("bioasq", "sturdy"): (238, 319, 394, 435, 570),
+    ("bioasq", "bm25"): (256, 349, 404, 443, 570),
+    ("bioasq", "e5"): (230, 334, 399, 435, 570),
+    ("bioasq", "openai"): (232, 340, 392, 423, 570),
+}
+
+JUDGMENT_COUNTS = {
+    ("contractnli", "sturdy"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__judge_correct": 5080,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 27039,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__judge_correct": 5221,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4_5__score": 27323,
+    },
+    ("contractnli", "bm25"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__judge_correct": 4812,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 25979,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__judge_correct": 5021,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4_5__score": 26554,
+    },
+    ("bioasq", "sturdy"): {
+        "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 3255,
+        "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 3717,
+    },
+    ("bioasq", "bm25"): {
+        "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 3266,
+        "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 3695,
+    },
+    ("finqa", "sturdy"): {
+        "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 2561,
+        "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 4727,
+    },
+    ("finqa", "bm25"): {
+        "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 2544,
+        "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 4748,
+    },
+}
 
 
 def load_manifest_module():
@@ -23,84 +72,78 @@ def load_manifest_module():
     return module
 
 
-def require_frame(path: Path, rows: int, error_columns: tuple[str, ...] = ()) -> pd.DataFrame:
-    if not path.exists():
-        raise ValueError(f"missing required artifact: {path.relative_to(ROOT)}")
-    frame = pd.read_parquet(path)
-    if len(frame) != rows:
-        raise ValueError(f"{path.relative_to(ROOT)}: expected {rows} rows, found {len(frame)}")
-    for column in error_columns:
-        if column not in frame or frame[column].fillna("").astype(str).str.strip().ne("").any():
-            raise ValueError(f"{path.relative_to(ROOT)}: nonempty or missing {column}")
-    return frame
-
-
-def validate_contract_e2e() -> None:
-    root = ROOT / "results/e2e/contractnli"
-    inputs = {
-        condition: require_frame(root / "input" / f"{condition}.parquet", 6173)
-        for condition in ("sturdy-a4-r2-ranked-windows", "bm25-top4")
+def validate_results() -> None:
+    expected_paths = {
+        ROOT / "results" / dataset / f"{method}.parquet"
+        for dataset in ROWS for method in METHODS[dataset]
     }
-    ids = set(inputs["sturdy-a4-r2-ranked-windows"].query_id.astype(str))
-    if ids != set(inputs["bm25-top4"].query_id.astype(str)) or len(ids) != 6173:
-        raise ValueError("ContractNLI inputs are not uniquely paired")
-    for condition in inputs:
-        generations = sorted((root / condition / "generations").glob("*.parquet"))
-        judgments = sorted((root / condition / "judgments").glob("*.parquet"))
-        if len(generations) != 2 or len(judgments) != 4:
-            raise ValueError(f"{condition}: expected 2 generations and 4 judgments")
-        for path in generations:
-            frame = require_frame(path, 6173, ("generation_error",))
-            if set(frame.query_id.astype(str)) != ids:
-                raise ValueError(f"{path.relative_to(ROOT)}: query IDs differ")
-        for path in judgments:
-            frame = require_frame(path, 6173, ("generation_error", "judge_error"))
-            if set(frame.query_id.astype(str)) != ids:
-                raise ValueError(f"{path.relative_to(ROOT)}: query IDs differ")
-    public_text = "\n".join(
-        path.read_text() for path in root.rglob("*.summary.json")
-    ) + (root / "paired/summary.json").read_text()
-    if "deterministic" in public_text or "label_accuracy" in public_text:
-        raise ValueError("ContractNLI public summaries expose deterministic label metrics")
+    actual_paths = set((ROOT / "results").rglob("*.parquet"))
+    if actual_paths != expected_paths:
+        raise ValueError("results/ must contain exactly the ten canonical Parquets")
 
+    for dataset, rows in ROWS.items():
+        frames = {}
+        for method in METHODS[dataset]:
+            path = ROOT / "results" / dataset / f"{method}.parquet"
+            frame = pd.read_parquet(path)
+            frames[method] = frame
+            if len(frame) != rows or frame.query_id.astype(str).nunique() != rows:
+                raise ValueError(f"{dataset}/{method}: incomplete or duplicate questions")
+            if set(frame.retrieval_method.astype(str)) != {method}:
+                raise ValueError(f"{dataset}/{method}: retrieval method mismatch")
+            if frame.question.fillna("").astype(str).str.strip().eq("").any():
+                raise ValueError(f"{dataset}/{method}: empty question")
+            if "retrieved_items" not in frame or "retrieved_context" not in frame:
+                raise ValueError(f"{dataset}/{method}: retrieval data missing")
+            if any(
+                str(item.get("text", "")).strip().lower() == "nan"
+                for items in frame.retrieved_items for item in items
+            ):
+                raise ValueError(f"{dataset}/{method}: NaN retrieval sentinel exposed")
+            errors = int(frame.retrieval_error.fillna("").astype(str).str.strip().ne("").sum())
+            if errors != RETRIEVAL_ERRORS.get((dataset, method), 0):
+                raise ValueError(f"{dataset}/{method}: unexpected retrieval error count")
+            forbidden = {"parsed_label", "label_correct", "label_parse_error"}
+            if any(any(name in column for name in forbidden) for column in frame):
+                raise ValueError(f"{dataset}/{method}: deterministic label metric exposed")
+            for column in frame:
+                if column.endswith(("__generation_error", "__judge_error")):
+                    if frame[column].fillna("").astype(str).str.strip().ne("").any():
+                        raise ValueError(f"{dataset}/{method}: nonempty {column}")
+                elif column.endswith("__generated_answer"):
+                    if frame[column].fillna("").astype(str).str.strip().eq("").any():
+                        raise ValueError(f"{dataset}/{method}: empty {column}")
+                elif column.endswith("__judge_correct"):
+                    if frame[column].isna().any():
+                        raise ValueError(f"{dataset}/{method}: missing {column}")
+                elif column.endswith("__score"):
+                    if frame[column].isna().any() or not frame[column].between(1, 5).all():
+                        raise ValueError(f"{dataset}/{method}: invalid {column}")
+                elif column.endswith("__verdict"):
+                    if not set(frame[column].astype(str)) <= {"CORRECT", "INCORRECT"}:
+                        raise ValueError(f"{dataset}/{method}: invalid {column}")
 
-def validate_bioasq_finqa_e2e() -> None:
-    for dataset, questions in (("bioasq", 4387), ("finqa", 6251)):
-        root = ROOT / "results/e2e" / dataset
-        require_frame(ROOT / "data" / dataset / "questions.parquet", questions)
-        for path in (root / "generations").glob("*.parquet"):
-            require_frame(path, questions * 2, ("generation_error",))
-        for path in (root / "judgments").glob("*.parquet"):
-            require_frame(path, questions * 2, ("generation_error", "judge_error"))
+            if dataset != "finqa":
+                columns = [f"golden_answer_exact_in_top_{rank}" for rank in range(1, 5)]
+                columns.append("golden_answer_exact_in_full_doc")
+                counts = tuple(int(frame[column].sum()) for column in columns)
+                if counts != EXACT_COUNTS[(dataset, method)]:
+                    raise ValueError(f"{dataset}/{method}: exact counts changed: {counts}")
 
+            for column, expected in JUDGMENT_COUNTS.get((dataset, method), {}).items():
+                if column.endswith("__verdict"):
+                    actual = int(frame[column].eq("CORRECT").sum())
+                else:
+                    actual = int(frame[column].sum())
+                if actual != expected:
+                    raise ValueError(
+                        f"{dataset}/{method}: {column} expected {expected}, found {actual}"
+                    )
 
-def validate_containment() -> None:
-    contract = ROOT / "data/contractnli/retrieval"
-    r2_parts = sorted(contract.glob("sturdy-a4-r2.part-*.parquet"))
-    if len(r2_parts) != 2 or sum(pq.read_metadata(path).num_rows for path in r2_parts) != 6173:
-        raise ValueError("ContractNLI Sturdy +/-2 partitions are incomplete")
-    require_frame(contract / "bm25.parquet", 6173)
-    for dataset, rows in (("contractnli", 6173), ("bioasq", 4387)):
-        questions = pd.read_parquet(
-            ROOT / "data" / dataset / "questions.parquet",
-            columns=["query_id", "question", "golden_answer"],
-        )
-        question_ids = set(questions.query_id.astype(str))
-        identity = set(zip(
-            questions.question.astype(str), questions.golden_answer.astype(str)
-        ))
-        for name in ("e5-small-v2.parquet", "openai-embedding-model-unspecified.parquet"):
-            frame = pd.read_parquet(ROOT / "data" / dataset / "retrieval" / name)
-            neural_identity = set(zip(
-                frame.question.astype(str), frame.golden_answer.astype(str)
-            ))
-            if not identity.issubset(neural_identity):
-                raise ValueError(f"{dataset}/{name}: missing packaged question identities")
-        if len(question_ids) != rows:
-            raise ValueError(f"{dataset}: question count mismatch")
-    summary = pd.read_csv(ROOT / "results/containment/summary.csv")
-    if len(summary) != 8 or set(summary.dataset) != {"contractnli", "bioasq"}:
-        raise ValueError("containment summary has unexpected coverage")
+        left = set(frames["sturdy"].query_id.astype(str))
+        right = set(frames["bm25"].query_id.astype(str))
+        if left != right:
+            raise ValueError(f"{dataset}: Sturdy and BM25 question IDs differ")
 
 
 def validate_manifest_and_sizes() -> None:
@@ -125,11 +168,9 @@ def validate_manifest_and_sizes() -> None:
 
 
 def validate() -> None:
-    validate_contract_e2e()
-    validate_bioasq_finqa_e2e()
-    validate_containment()
+    validate_results()
     validate_manifest_and_sizes()
-    print("valid package: E2E, containment, manifest, and 49 MiB limit")
+    print("valid package: ten canonical result Parquets, metrics, manifest, and sizes")
 
 
 if __name__ == "__main__":

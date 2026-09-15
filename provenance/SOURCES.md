@@ -2,7 +2,8 @@
 
 This file records the lineage needed to interpret or reproduce the packaged
 results. Paths in older provenance records identify the original local source;
-the corresponding portable files now live under `data/` and `results/`.
+the corresponding portable files now live under `data/`, `artifacts/`, and
+`results/`.
 
 ## Dataset cohorts
 
@@ -92,7 +93,7 @@ independent scale judge is `anthropic/claude-sonnet-4.5`, prompt version
 `supplied-scale-1-5-v1`. It uses the supplied 1--5 meaning-match rubric and
 returns structured JSON with integer `score` and a one-sentence `rationale`.
 The complete byte-level prompt text, user templates, and JSON schemas are stored
-in `results/e2e/contractnli/provenance.json` and implemented by
+in `artifacts/e2e/contractnli/provenance.json` and implemented by
 `scripts/run_contractnli_full_dual_label_matrix.py` together with
 `scripts/run_contractnli_full_prompt_matrix.py`.
 
@@ -137,8 +138,8 @@ adjudication. Exact prompts and layouts are implemented in
 - Score exact containment with `scripts/contractnli/exact.py` and
   `scripts/bioasq/exact.py`.
 - Run/resume BioASQ and FinQA E2E: `scripts/run_llm_eval_suite.py`.
-- Run/resume ContractNLI E2E:
-  `bin/run-contractnli-full-dual-label-matrix`.
+- Run/resume ContractNLI E2E with `scripts/contractnli/generate.py` and
+  `scripts/contractnli/judge.py`.
 - Validate identities, coverage, errors, summaries, and hosting limits with
   `scripts/validate_package.py`.
 - Regenerate or check file hashes and dimensions: `scripts/write_manifest.py`.

@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,questions,generation_errors,judge_errors,judged_questions,correct,accuracy,input_tokens,output_tokens
+bioasq,bm25,gpt-5.6-luna,gpt-5.6-luna,4387,0,0,4387,3695,0.8422612263505813,1149651,323711
+bioasq,sturdy,gpt-5.6-luna,gpt-5.6-luna,4387,0,0,4387,3717,0.8472760428538865,1149836,321764

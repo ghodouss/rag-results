@@ -7,13 +7,387 @@
     },
     {
       "path": "README.md",
-      "bytes": 5279,
-      "sha256": "851695f11e7638c54ba3c944a9829671cf1463b36636d1649e0d7991a27bcee1"
+      "bytes": 4195,
+      "sha256": "46ac47c9025e4c3665b0dbe1c0100e652b595f2606360c8043ecef32faba5ed1"
     },
     {
-      "path": "bin/run-contractnli-full-dual-label-matrix",
-      "bytes": 1777,
-      "sha256": "7501c8d98f765252a20557461cc5e3b54a21b0eca8c79f781d21266797834dcd"
+      "path": "artifacts/e2e/bioasq/generations/gpt-4o-mini.parquet",
+      "bytes": 1953368,
+      "sha256": "ac5e05d9d31f88b2e75c30c3a1db334628809237814ec8ca1a314128e154820a",
+      "rows": 8774,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/bioasq/generations/gpt-5.6-luna.parquet",
+      "bytes": 1903144,
+      "sha256": "a44593f7e85bc4850d5a4c10a19b3aaf421ae4f2fe5059464911bc0a8b408f3d",
+      "rows": 8774,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
+      "bytes": 2605042,
+      "sha256": "3b1d8222fd6e8ad6be24d087c2ccb71229cd97d42c9c5dde0056f9289e489178",
+      "rows": 8774,
+      "columns": 19
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.csv",
+      "bytes": 335,
+      "sha256": "3feeceacb67e0b2fa3381602c738a4dc6f749e8329554c51f6a9fadf3e47d881"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.json",
+      "bytes": 717,
+      "sha256": "fdece706106039a7ce89a0f229b01eb30d7f1ba2a57371520b13fa250cbb85b2"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.parquet",
+      "bytes": 2600082,
+      "sha256": "28979b66fa3f2df49fb23afd56ffd54e7378fa1dc33d6cb40039252f447387a0",
+      "rows": 8774,
+      "columns": 19
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.csv",
+      "bytes": 339,
+      "sha256": "677f4ff81f65f125a2d4e651d2f415772030daadf007b96abc65e02e63f81eba"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.json",
+      "bytes": 721,
+      "sha256": "8a97a42e4e7e8a13c626667dc10c76a42f360ff87f4f72ee790f6cf326e4c23f"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/summary.csv",
+      "bytes": 834,
+      "sha256": "5860b66e023a76eefca6d0bc9977bfb9c412fae5243ae05b3caba1ceb06440b1"
+    },
+    {
+      "path": "artifacts/e2e/bioasq/summary.json",
+      "bytes": 1429,
+      "sha256": "f38a528e5b7252b4d400c5b4e56cfe9a242ca93b84da85af2aa2e2fcd88006de"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
+      "bytes": 8071485,
+      "sha256": "60eee4e1dd8c4376ae2ab9f763e8ae86b5153438ea611d798832e973a3167c0b",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 131,
+      "sha256": "4bb27e0db772b2f596ec66c34cddcd7585cec4a7a47f8b5bc5d130d65196b426"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 162,
+      "sha256": "e4423c1a8ee733af9748aada0c950c76fe4d6438163b8a3739bfd4f8d65cbd56"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
+      "bytes": 7934571,
+      "sha256": "2079ca1169a7cd1b57d09e36143874664fbf439254ec21e139ea6f396a99b975",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 126,
+      "sha256": "e79ae4fb2ff8b56408d727d1e8600aca74f9ad8aace3b32938ffc2c762344d05"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 157,
+      "sha256": "67701a97c4cd6f0fe9157183ecb9603c16f76f346d13d38de85c68e5d3ad13e0"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 8681844,
+      "sha256": "058e02667c826f872106a3dd7e383a1cf338d5cfc65d07b568a4903bab04f83b",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 245,
+      "sha256": "4233f13c48000a3289a93589f4aede11b70f4e39b99ddd1fb512f249ae2d7345"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 304,
+      "sha256": "77e2b1fdd7131528965f8b5e8ed30e51ff1572cd107c0c8ad32c97e16021aac3"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
+      "bytes": 9023608,
+      "sha256": "b588b74f3af548a73cae41602e98af700032d7f475da834f427886b189f41c96",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 318,
+      "sha256": "113d85d78a4c0e6daed9c4e6bf7e06d7d77780d387139826ef16a37bf2b609b5"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
+      "bytes": 407,
+      "sha256": "98c7c21c95e7df779d56ef1bea743ca21bae434168511d0c9e87d095f8122c20"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 8543391,
+      "sha256": "027ac80bbe72a230b09a75318f89d8c8ce9b59301a179f655ecf0f6b107bb357",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 241,
+      "sha256": "e8fa92df1a5a1ada523af6e42d8dbf414226644c19b34db617ea4897593bc797"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 300,
+      "sha256": "1a2ba945e4b6951550874b877b8d95bd6659a328bb97b77c1442bb34d2f993d0"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
+      "bytes": 8785085,
+      "sha256": "5dcb6c38b810c49fb9b09f8a3087f460454ea7085f37e58b839bc82a1010f2e9",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 310,
+      "sha256": "e4aafe5d94dcd3e4ceb9d13d76ca86286c6d2b80306a07e86f613b57786efc3b"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
+      "bytes": 399,
+      "sha256": "58a0cdb9ee95f81dd1406a747e669945d46a06a960f1f39daf8a9572b5a085ad"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/input/bm25-top4.parquet",
+      "bytes": 7295263,
+      "sha256": "9e0c15a47f7b2b849745ed26ba32382e5257f8d9ff4c0cd1faf87a23791594cd",
+      "rows": 6173,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/contractnli/input/sturdy-a4-r2-ranked-windows.parquet",
+      "bytes": 6523498,
+      "sha256": "b5ddf9e078fbab5cb328bbde6b7fb39a279f06b5b430c4048650dd6e14fe3f5e",
+      "rows": 6173,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/contractnli/paired/summary.csv",
+      "bytes": 2178,
+      "sha256": "5775a151e0556f7364251668b5b2a2787d48605bd16c70fffe9a0e01bcb255a5"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/paired/summary.json",
+      "bytes": 4203,
+      "sha256": "38e9e174829c1f364ad941c93d1e0fbee5e662231c26b17423154c98b4415277"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/provenance.json",
+      "bytes": 4563,
+      "sha256": "311dedceaf00388a1b1e7cee75f5a334392995649617700e52ae5278ccbd3b4f"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
+      "bytes": 7320445,
+      "sha256": "a5041efbd90c43b2abc921af5865afdb26e5cb9919bcb0062b4539a772014910",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 131,
+      "sha256": "4bb27e0db772b2f596ec66c34cddcd7585cec4a7a47f8b5bc5d130d65196b426"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 162,
+      "sha256": "e4423c1a8ee733af9748aada0c950c76fe4d6438163b8a3739bfd4f8d65cbd56"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
+      "bytes": 7163831,
+      "sha256": "b02623d4455520d4b6adf5785ab3011c906c09db880bb1cedbf31b4a37c15fba",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 126,
+      "sha256": "e79ae4fb2ff8b56408d727d1e8600aca74f9ad8aace3b32938ffc2c762344d05"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 157,
+      "sha256": "67701a97c4cd6f0fe9157183ecb9603c16f76f346d13d38de85c68e5d3ad13e0"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 7928366,
+      "sha256": "cee6c0f617b2a23e7527fb38a48972c179656ca1bdfda490854909dd52a081b0",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 246,
+      "sha256": "12daa416651632f6d670a10ca4e15ef50e9c1d91a269f1b2a6565a20a90adfca"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 305,
+      "sha256": "289f9e00ea98ee42bfc4423b4198a39ad4e0fe28d3cc268959121eb2719bd4f8"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
+      "bytes": 8265846,
+      "sha256": "084c94298b78ed19a8b7258f63584654278e6c9a87592c2e158dac67459fa6fe",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 317,
+      "sha256": "fe08d30bd60d18eed8f571e79d2cb33a1dd45c9ea5cef16c37122444fd8fdd35"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
+      "bytes": 406,
+      "sha256": "ecea1d293b991278e53d89a3dff02176e7d9d701352c5dbfe8946159b0b5395a"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 7765266,
+      "sha256": "6f5121d7ae8a3710cb9d770888be9386fff6f4fb220883f32bbb80cd65166cbf",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 241,
+      "sha256": "70904b4ab66205a2f6912706459fe0216e15cb10a901459ad075d88586d2b1fc"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 300,
+      "sha256": "2c8b3af0cbf653c29eac77e0c4987eec13de8fdf6742451a84cbc9d0ace00291"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
+      "bytes": 7999588,
+      "sha256": "64f76ee09a7a658e365a31fc80fd3cbcabea794fe400b22fa9639720473a9309",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 312,
+      "sha256": "ffa924f099ee57c3bbea18960859f371ef89324a8955fbba0c0a7c44fa623146"
+    },
+    {
+      "path": "artifacts/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
+      "bytes": 401,
+      "sha256": "982218654c2341215aca2b546adcb81cd2bb9ff01118046943102f80529de663"
+    },
+    {
+      "path": "artifacts/e2e/finqa/generations/gpt-4o-mini.parquet",
+      "bytes": 1413533,
+      "sha256": "12c076aecfac658f6ee78b6116997952308d3f53d2233d0c388fcee5bd627861",
+      "rows": 12502,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/finqa/generations/gpt-5.6-luna.parquet",
+      "bytes": 1047648,
+      "sha256": "9621e942a0c62f0dfacb3830527397bc31ddf168987c79372557e2adda504fc8",
+      "rows": 12502,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
+      "bytes": 2063415,
+      "sha256": "62c6c4c231cc9e1208304b908f3692f58d3d5fea040a5f29843b6c07b47d4bc5",
+      "rows": 12502,
+      "columns": 19
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.csv",
+      "bytes": 332,
+      "sha256": "c0fa4d20f056dfa67ae805fbecd67c29581bc9cead4e93114c81fca974aa0d88"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.json",
+      "bytes": 714,
+      "sha256": "caa7387ca6d9f5218a38bba241227355a21d7c53527b40fba964f4f4bddfbd9a"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.parquet",
+      "bytes": 1424885,
+      "sha256": "2416d262aa8965e0846085ddf51be42ed48ccd35a3510a8b5ae1cf0ea37b3bcd",
+      "rows": 12502,
+      "columns": 19
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.csv",
+      "bytes": 337,
+      "sha256": "4d7aae98530971487592488cf73e6ffb54710775fcbe419c61f06c94c0ccfe1a"
+    },
+    {
+      "path": "artifacts/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.json",
+      "bytes": 719,
+      "sha256": "b1f9c97a4879f38043e3932da149ae7e31888884c989828f6fbfa73c2f9faa92"
+    },
+    {
+      "path": "artifacts/e2e/finqa/summary.csv",
+      "bytes": 90,
+      "sha256": "3a12ab7029081cce7b15f13773dd10c71d51f971936ea07a4f420d5b08028a64"
+    },
+    {
+      "path": "artifacts/e2e/finqa/summary.json",
+      "bytes": 233,
+      "sha256": "0a7156b9bba6f74a3a096e49bd68cfa9135300482ae742a5bfae13fd23054b22"
+    },
+    {
+      "path": "artifacts/e2e/summary.csv",
+      "bytes": 762,
+      "sha256": "9aa180894a31c704a0b8634722eb2b773114adf240647b53ec170889634c7f15"
+    },
+    {
+      "path": "artifacts/e2e/summary.json",
+      "bytes": 1417,
+      "sha256": "f35e0f686ed1d48b15eadf9eefbc942aaec2a54ae447585442a4457779a2355c"
+    },
+    {
+      "path": "artifacts/legacy-summaries/containment/neural-summary.csv",
+      "bytes": 2032,
+      "sha256": "5c812fd8c183d2b6d4fae58fac837c5315b4a43259286a3284169a4066c59e51"
+    },
+    {
+      "path": "artifacts/legacy-summaries/containment/neural-summary.json",
+      "bytes": 5213,
+      "sha256": "916e0709d8d1c010ceba8cdc476714af038a4aa000fbf80f186d85a619d6a93e"
+    },
+    {
+      "path": "artifacts/legacy-summaries/containment/summary.csv",
+      "bytes": 961,
+      "sha256": "9f6350a9e05e8ac8252cb6c92194dd448d0f552a2c7d86619e1f5fa3b9d4779d"
+    },
+    {
+      "path": "artifacts/legacy-summaries/containment/summary.json",
+      "bytes": 2380,
+      "sha256": "c6cdd957618a26fb603e55cad2c5105e700e12a61feb38f14c7412bc823e1406"
     },
     {
       "path": "config/datasets.json",
@@ -190,8 +564,8 @@
     },
     {
       "path": "provenance/SOURCES.md",
-      "bytes": 7631,
-      "sha256": "8f8041f81dda696615af96b7ad5e59f1261ebbb7e8105b5134cdf8a0d1018603"
+      "bytes": 7676,
+      "sha256": "f35fa45f0d41472a17341ff4e2097d5e47612c528238989355e674e419da51c2"
     },
     {
       "path": "provenance/frozen-pilot/contractnli-sturdy-a4-r2-ranked-windows-1000.parquet",
@@ -206,383 +580,74 @@
       "sha256": "12dd0ab288763c8e26e024d7957965726b5ca3d97413e6d1f215876cb3ec8c6d"
     },
     {
-      "path": "results/containment/neural-summary.csv",
-      "bytes": 2032,
-      "sha256": "5c812fd8c183d2b6d4fae58fac837c5315b4a43259286a3284169a4066c59e51"
+      "path": "results/bioasq/bm25.parquet",
+      "bytes": 25600089,
+      "sha256": "5d8f1b281f763c1ccd344217db838e6e457500c06b1ceb5fde6ebf0930264168",
+      "rows": 4387,
+      "columns": 68
     },
     {
-      "path": "results/containment/neural-summary.json",
-      "bytes": 5213,
-      "sha256": "916e0709d8d1c010ceba8cdc476714af038a4aa000fbf80f186d85a619d6a93e"
+      "path": "results/bioasq/e5.parquet",
+      "bytes": 16161812,
+      "sha256": "91807637f77ddc9699984a7b2fe756f1c3725d53adbb1d918edc4892c5cbf83c",
+      "rows": 4387,
+      "columns": 24
     },
     {
-      "path": "results/containment/summary.csv",
-      "bytes": 961,
-      "sha256": "9f6350a9e05e8ac8252cb6c92194dd448d0f552a2c7d86619e1f5fa3b9d4779d"
+      "path": "results/bioasq/openai.parquet",
+      "bytes": 16098690,
+      "sha256": "2c058f9ae28a4f76fade2dbd0f860fdff92e1d5cffe2b2fa9d554b923c8efeb4",
+      "rows": 4387,
+      "columns": 24
     },
     {
-      "path": "results/containment/summary.json",
-      "bytes": 2380,
-      "sha256": "c6cdd957618a26fb603e55cad2c5105e700e12a61feb38f14c7412bc823e1406"
+      "path": "results/bioasq/sturdy.parquet",
+      "bytes": 26013947,
+      "sha256": "44d9975a8623b364d23327e76d0f74d26a1bbd4a90eab4c79b9cc18c460ddcfe",
+      "rows": 4387,
+      "columns": 68
     },
     {
-      "path": "results/e2e/bioasq/generations/gpt-4o-mini.parquet",
-      "bytes": 1953368,
-      "sha256": "ac5e05d9d31f88b2e75c30c3a1db334628809237814ec8ca1a314128e154820a",
-      "rows": 8774,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/bioasq/generations/gpt-5.6-luna.parquet",
-      "bytes": 1903144,
-      "sha256": "a44593f7e85bc4850d5a4c10a19b3aaf421ae4f2fe5059464911bc0a8b408f3d",
-      "rows": 8774,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
-      "bytes": 2605042,
-      "sha256": "3b1d8222fd6e8ad6be24d087c2ccb71229cd97d42c9c5dde0056f9289e489178",
-      "rows": 8774,
-      "columns": 19
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.csv",
-      "bytes": 335,
-      "sha256": "3feeceacb67e0b2fa3381602c738a4dc6f749e8329554c51f6a9fadf3e47d881"
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.json",
-      "bytes": 717,
-      "sha256": "fdece706106039a7ce89a0f229b01eb30d7f1ba2a57371520b13fa250cbb85b2"
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.parquet",
-      "bytes": 2600082,
-      "sha256": "28979b66fa3f2df49fb23afd56ffd54e7378fa1dc33d6cb40039252f447387a0",
-      "rows": 8774,
-      "columns": 19
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.csv",
-      "bytes": 339,
-      "sha256": "677f4ff81f65f125a2d4e651d2f415772030daadf007b96abc65e02e63f81eba"
-    },
-    {
-      "path": "results/e2e/bioasq/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.json",
-      "bytes": 721,
-      "sha256": "8a97a42e4e7e8a13c626667dc10c76a42f360ff87f4f72ee790f6cf326e4c23f"
-    },
-    {
-      "path": "results/e2e/bioasq/summary.csv",
-      "bytes": 834,
-      "sha256": "5860b66e023a76eefca6d0bc9977bfb9c412fae5243ae05b3caba1ceb06440b1"
-    },
-    {
-      "path": "results/e2e/bioasq/summary.json",
-      "bytes": 1429,
-      "sha256": "f38a528e5b7252b4d400c5b4e56cfe9a242ca93b84da85af2aa2e2fcd88006de"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
-      "bytes": 8071485,
-      "sha256": "60eee4e1dd8c4376ae2ab9f763e8ae86b5153438ea611d798832e973a3167c0b",
+      "path": "results/contractnli/bm25.parquet",
+      "bytes": 19197681,
+      "sha256": "6c3574a8a9cf743b93b6eeb1d3cf1af526b321d2a7bd5ae92b8ff762cc615624",
       "rows": 6173,
-      "columns": 30
+      "columns": 116
     },
     {
-      "path": "results/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
-      "bytes": 131,
-      "sha256": "4bb27e0db772b2f596ec66c34cddcd7585cec4a7a47f8b5bc5d130d65196b426"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
-      "bytes": 162,
-      "sha256": "e4423c1a8ee733af9748aada0c950c76fe4d6438163b8a3739bfd4f8d65cbd56"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
-      "bytes": 7934571,
-      "sha256": "2079ca1169a7cd1b57d09e36143874664fbf439254ec21e139ea6f396a99b975",
+      "path": "results/contractnli/e5.parquet",
+      "bytes": 7852907,
+      "sha256": "ec8c1516a004ff45f8c096c12a7d23a9afdaf8ff49ca0cf1a110ae2604ed471f",
       "rows": 6173,
-      "columns": 30
+      "columns": 26
     },
     {
-      "path": "results/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
-      "bytes": 126,
-      "sha256": "e79ae4fb2ff8b56408d727d1e8600aca74f9ad8aace3b32938ffc2c762344d05"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
-      "bytes": 157,
-      "sha256": "67701a97c4cd6f0fe9157183ecb9603c16f76f346d13d38de85c68e5d3ad13e0"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
-      "bytes": 8681844,
-      "sha256": "058e02667c826f872106a3dd7e383a1cf338d5cfc65d07b568a4903bab04f83b",
+      "path": "results/contractnli/openai.parquet",
+      "bytes": 8237501,
+      "sha256": "a336c587e8d6146aa4356b9ee32c0d5383c4000481150580769fbdb08e992132",
       "rows": 6173,
-      "columns": 42
+      "columns": 26
     },
     {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
-      "bytes": 245,
-      "sha256": "4233f13c48000a3289a93589f4aede11b70f4e39b99ddd1fb512f249ae2d7345"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
-      "bytes": 304,
-      "sha256": "77e2b1fdd7131528965f8b5e8ed30e51ff1572cd107c0c8ad32c97e16021aac3"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
-      "bytes": 9023608,
-      "sha256": "b588b74f3af548a73cae41602e98af700032d7f475da834f427886b189f41c96",
+      "path": "results/contractnli/sturdy.parquet",
+      "bytes": 18279413,
+      "sha256": "069906642b8252253d6b1e045a0234a1891fa3e2ca92568f6c33e3f24b413f63",
       "rows": 6173,
-      "columns": 43
+      "columns": 114
     },
     {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
-      "bytes": 318,
-      "sha256": "113d85d78a4c0e6daed9c4e6bf7e06d7d77780d387139826ef16a37bf2b609b5"
+      "path": "results/finqa/bm25.parquet",
+      "bytes": 13013930,
+      "sha256": "d92fec90b7db0cfada05eeedbca45bffc724e5c9aa4629580cf6b6e0c5af46a1",
+      "rows": 6251,
+      "columns": 66
     },
     {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
-      "bytes": 407,
-      "sha256": "98c7c21c95e7df779d56ef1bea743ca21bae434168511d0c9e87d095f8122c20"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
-      "bytes": 8543391,
-      "sha256": "027ac80bbe72a230b09a75318f89d8c8ce9b59301a179f655ecf0f6b107bb357",
-      "rows": 6173,
-      "columns": 42
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
-      "bytes": 241,
-      "sha256": "e8fa92df1a5a1ada523af6e42d8dbf414226644c19b34db617ea4897593bc797"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
-      "bytes": 300,
-      "sha256": "1a2ba945e4b6951550874b877b8d95bd6659a328bb97b77c1442bb34d2f993d0"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
-      "bytes": 8785085,
-      "sha256": "5dcb6c38b810c49fb9b09f8a3087f460454ea7085f37e58b839bc82a1010f2e9",
-      "rows": 6173,
-      "columns": 43
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
-      "bytes": 310,
-      "sha256": "e4aafe5d94dcd3e4ceb9d13d76ca86286c6d2b80306a07e86f613b57786efc3b"
-    },
-    {
-      "path": "results/e2e/contractnli/bm25-top4/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
-      "bytes": 399,
-      "sha256": "58a0cdb9ee95f81dd1406a747e669945d46a06a960f1f39daf8a9572b5a085ad"
-    },
-    {
-      "path": "results/e2e/contractnli/input/bm25-top4.parquet",
-      "bytes": 7295263,
-      "sha256": "9e0c15a47f7b2b849745ed26ba32382e5257f8d9ff4c0cd1faf87a23791594cd",
-      "rows": 6173,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/contractnli/input/sturdy-a4-r2-ranked-windows.parquet",
-      "bytes": 6523498,
-      "sha256": "b5ddf9e078fbab5cb328bbde6b7fb39a279f06b5b430c4048650dd6e14fe3f5e",
-      "rows": 6173,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/contractnli/paired/summary.csv",
-      "bytes": 2178,
-      "sha256": "5775a151e0556f7364251668b5b2a2787d48605bd16c70fffe9a0e01bcb255a5"
-    },
-    {
-      "path": "results/e2e/contractnli/paired/summary.json",
-      "bytes": 4203,
-      "sha256": "38e9e174829c1f364ad941c93d1e0fbee5e662231c26b17423154c98b4415277"
-    },
-    {
-      "path": "results/e2e/contractnli/provenance.json",
-      "bytes": 4563,
-      "sha256": "311dedceaf00388a1b1e7cee75f5a334392995649617700e52ae5278ccbd3b4f"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
-      "bytes": 7320445,
-      "sha256": "a5041efbd90c43b2abc921af5865afdb26e5cb9919bcb0062b4539a772014910",
-      "rows": 6173,
-      "columns": 30
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
-      "bytes": 131,
-      "sha256": "4bb27e0db772b2f596ec66c34cddcd7585cec4a7a47f8b5bc5d130d65196b426"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
-      "bytes": 162,
-      "sha256": "e4423c1a8ee733af9748aada0c950c76fe4d6438163b8a3739bfd4f8d65cbd56"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
-      "bytes": 7163831,
-      "sha256": "b02623d4455520d4b6adf5785ab3011c906c09db880bb1cedbf31b4a37c15fba",
-      "rows": 6173,
-      "columns": 30
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
-      "bytes": 126,
-      "sha256": "e79ae4fb2ff8b56408d727d1e8600aca74f9ad8aace3b32938ffc2c762344d05"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
-      "bytes": 157,
-      "sha256": "67701a97c4cd6f0fe9157183ecb9603c16f76f346d13d38de85c68e5d3ad13e0"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
-      "bytes": 7928366,
-      "sha256": "cee6c0f617b2a23e7527fb38a48972c179656ca1bdfda490854909dd52a081b0",
-      "rows": 6173,
-      "columns": 42
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
-      "bytes": 246,
-      "sha256": "12daa416651632f6d670a10ca4e15ef50e9c1d91a269f1b2a6565a20a90adfca"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
-      "bytes": 305,
-      "sha256": "289f9e00ea98ee42bfc4423b4198a39ad4e0fe28d3cc268959121eb2719bd4f8"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
-      "bytes": 8265846,
-      "sha256": "084c94298b78ed19a8b7258f63584654278e6c9a87592c2e158dac67459fa6fe",
-      "rows": 6173,
-      "columns": 43
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
-      "bytes": 317,
-      "sha256": "fe08d30bd60d18eed8f571e79d2cb33a1dd45c9ea5cef16c37122444fd8fdd35"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
-      "bytes": 406,
-      "sha256": "ecea1d293b991278e53d89a3dff02176e7d9d701352c5dbfe8946159b0b5395a"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
-      "bytes": 7765266,
-      "sha256": "6f5121d7ae8a3710cb9d770888be9386fff6f4fb220883f32bbb80cd65166cbf",
-      "rows": 6173,
-      "columns": 42
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
-      "bytes": 241,
-      "sha256": "70904b4ab66205a2f6912706459fe0216e15cb10a901459ad075d88586d2b1fc"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
-      "bytes": 300,
-      "sha256": "2c8b3af0cbf653c29eac77e0c4987eec13de8fdf6742451a84cbc9d0ace00291"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.parquet",
-      "bytes": 7999588,
-      "sha256": "64f76ee09a7a658e365a31fc80fd3cbcabea794fe400b22fa9639720473a9309",
-      "rows": 6173,
-      "columns": 43
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.csv",
-      "bytes": 312,
-      "sha256": "ffa924f099ee57c3bbea18960859f371ef89324a8955fbba0c0a7c44fa623146"
-    },
-    {
-      "path": "results/e2e/contractnli/sturdy-a4-r2-ranked-windows/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4.5__supplied-scale-1-5-v1.summary.json",
-      "bytes": 401,
-      "sha256": "982218654c2341215aca2b546adcb81cd2bb9ff01118046943102f80529de663"
-    },
-    {
-      "path": "results/e2e/finqa/generations/gpt-4o-mini.parquet",
-      "bytes": 1413533,
-      "sha256": "12c076aecfac658f6ee78b6116997952308d3f53d2233d0c388fcee5bd627861",
-      "rows": 12502,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/finqa/generations/gpt-5.6-luna.parquet",
-      "bytes": 1047648,
-      "sha256": "9621e942a0c62f0dfacb3830527397bc31ddf168987c79372557e2adda504fc8",
-      "rows": 12502,
-      "columns": 14
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.parquet",
-      "bytes": 2063415,
-      "sha256": "62c6c4c231cc9e1208304b908f3692f58d3d5fea040a5f29843b6c07b47d4bc5",
-      "rows": 12502,
-      "columns": 19
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.csv",
-      "bytes": 332,
-      "sha256": "c0fa4d20f056dfa67ae805fbecd67c29581bc9cead4e93114c81fca974aa0d88"
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-4o-mini__judge-gpt-4o-mini.summary.json",
-      "bytes": 714,
-      "sha256": "caa7387ca6d9f5218a38bba241227355a21d7c53527b40fba964f4f4bddfbd9a"
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.parquet",
-      "bytes": 1424885,
-      "sha256": "2416d262aa8965e0846085ddf51be42ed48ccd35a3510a8b5ae1cf0ea37b3bcd",
-      "rows": 12502,
-      "columns": 19
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.csv",
-      "bytes": 337,
-      "sha256": "4d7aae98530971487592488cf73e6ffb54710775fcbe419c61f06c94c0ccfe1a"
-    },
-    {
-      "path": "results/e2e/finqa/judgments/gpt-5.6-luna__judge-gpt-5.6-luna.summary.json",
-      "bytes": 719,
-      "sha256": "b1f9c97a4879f38043e3932da149ae7e31888884c989828f6fbfa73c2f9faa92"
-    },
-    {
-      "path": "results/e2e/finqa/summary.csv",
-      "bytes": 90,
-      "sha256": "3a12ab7029081cce7b15f13773dd10c71d51f971936ea07a4f420d5b08028a64"
-    },
-    {
-      "path": "results/e2e/finqa/summary.json",
-      "bytes": 233,
-      "sha256": "0a7156b9bba6f74a3a096e49bd68cfa9135300482ae742a5bfae13fd23054b22"
-    },
-    {
-      "path": "results/e2e/summary.csv",
-      "bytes": 762,
-      "sha256": "9aa180894a31c704a0b8634722eb2b773114adf240647b53ec170889634c7f15"
-    },
-    {
-      "path": "results/e2e/summary.json",
-      "bytes": 1417,
-      "sha256": "f35e0f686ed1d48b15eadf9eefbc942aaec2a54ae447585442a4457779a2355c"
+      "path": "results/finqa/sturdy.parquet",
+      "bytes": 13064749,
+      "sha256": "c75ef379da1e87b078e84e02ec563bfc0a776a62583bc84222d3b587ff7ba1e0",
+      "rows": 6251,
+      "columns": 66
     },
     {
       "path": "scripts/bioasq/exact.py",
@@ -611,8 +676,13 @@
     },
     {
       "path": "scripts/build_handoff.py",
-      "bytes": 6775,
-      "sha256": "ce4bb4034f64a5202df3eec1b13b5ef4c057a43aa4cbc2c69c20431e31af9313"
+      "bytes": 6798,
+      "sha256": "ade9fc4d5cd6eb05422d936155ceb869bef6d4544369352bcba0de274442667a"
+    },
+    {
+      "path": "scripts/build_result_parquets.py",
+      "bytes": 14361,
+      "sha256": "81245e2047cb1b49a9bc63503af9843b205d9f4d107904b885719957a665b328"
     },
     {
       "path": "scripts/build_retrieval_qrels.py",
@@ -671,8 +741,8 @@
     },
     {
       "path": "scripts/generate_answers.py",
-      "bytes": 6599,
-      "sha256": "36c4f19d5b9245c7d4005c43409f88f428f0e0f63c3dca81fccbadc4a9137fb0"
+      "bytes": 6625,
+      "sha256": "56c383ff571b3c5569bea74c09220f41a42337bd9607aa5f78938851f8ec7b2c"
     },
     {
       "path": "scripts/import_neural_results.py",
@@ -681,8 +751,8 @@
     },
     {
       "path": "scripts/judge_answers.py",
-      "bytes": 8916,
-      "sha256": "725323e3b78f6c2d3a90ae4c3cb593005d1db0062d1be6c2ed277335293ff047"
+      "bytes": 8936,
+      "sha256": "8b0722c5b4c573adcd71cb4b772f6d86d9e58de3990e7b9f7d5ac31e8f40aaa4"
     },
     {
       "path": "scripts/prepare_data.py",
@@ -691,8 +761,8 @@
     },
     {
       "path": "scripts/prepare_sentence_ordering_inputs.py",
-      "bytes": 10822,
-      "sha256": "6015e75736fe78a80872944c7b90b361b7c9f25d7835262f060027e1e674ff00"
+      "bytes": 10850,
+      "sha256": "168026b83f36b8bdb4614e663ad43b130337c3339312e5d47df3b7bbcb3a506a"
     },
     {
       "path": "scripts/pull_sturdy.py",
@@ -706,28 +776,33 @@
     },
     {
       "path": "scripts/run_contractnli_full_dual_label_matrix.py",
-      "bytes": 2800,
-      "sha256": "29c8994d98c82ff3780fcadb09f1c677353ac74ae6a2e3c968aee2cf79c973a1"
+      "bytes": 2786,
+      "sha256": "5b20149c9f08b5d56b81673159f27efeba3ea018a7511f5c9291580f44d8da60"
     },
     {
       "path": "scripts/run_contractnli_full_prompt_matrix.py",
-      "bytes": 34862,
-      "sha256": "f15ba405b91629c1731989a527763ee799fd1633c17b0eede7ef334347b6bac7"
+      "bytes": 34880,
+      "sha256": "07dcc0e6b8669d814fc644b5a61268484343d2daca72c38eb08aa1c76717e3e4"
     },
     {
       "path": "scripts/run_contractnli_prompt_pilot.py",
-      "bytes": 27124,
-      "sha256": "3bcd7128063d9c8c50f80b5f7acaff22be99c599bdba973cf1d505e20cc15dea"
+      "bytes": 27156,
+      "sha256": "15d2dadb166f898ded5cc2ffe1f1450fd6940dfe407bd1b4a0a61d7a026a50a8"
     },
     {
       "path": "scripts/run_llm_eval_suite.py",
-      "bytes": 2068,
-      "sha256": "7ef077bacba6aa9f4767334cd7db997bce75bc72c049df09f13a3a4a3508d7f0"
+      "bytes": 2038,
+      "sha256": "499c7d66dc234323439fbf9d190a4fde7536b47c9db6f0606289ae47ff7fd510"
     },
     {
       "path": "scripts/score_exact.py",
       "bytes": 4469,
       "sha256": "f9fbb35b215002d434d68296a8489a01f816ab3396ce2654804e5e2056de496f"
+    },
+    {
+      "path": "scripts/summarize_results.py",
+      "bytes": 2841,
+      "sha256": "8d8cee384b5e818113362a94c5528f01df2f778652e009fbeaa343d115858b3d"
     },
     {
       "path": "scripts/validate_handoff.py",
@@ -736,13 +811,13 @@
     },
     {
       "path": "scripts/validate_llm_outputs.py",
-      "bytes": 4033,
-      "sha256": "f4e2286b77d929e323ec97093ecc0d807023118d520ce660e1b60964ea25145e"
+      "bytes": 4078,
+      "sha256": "025b361a34f00ff203b882c1e46f236462df5267be66d94de9929fc031df0ddb"
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 6008,
-      "sha256": "c20163bcf2c08852b25c7271b0795b7951109efdb4368f08b851615b10b8ab32"
+      "bytes": 8089,
+      "sha256": "79d18c5100031c3a9020fbc826e3075eb341db24edfadf8002f0e15b3cc36f5d"
     },
     {
       "path": "scripts/write_manifest.py",

@@ -27,10 +27,10 @@ from rag_eval.llm import (
 )
 
 
-RESULTS_ROOT = ROOT / "results" / "contractnli-prompt-optimization-100"
+RESULTS_ROOT = ROOT / "artifacts" / "experiments" / "contractnli-prompt-optimization-100"
 FROZEN_INPUT = (
     ROOT
-    / "results/contractnli-sentence-a4-r2-ordering-evidence-1000"
+    / "artifacts/experiments/contractnli-sentence-a4-r2-ordering-evidence-1000"
     / "inputs/ranked-windows.parquet"
 )
 EXPECTED_RETRIEVAL_METHOD = "sturdy-sentence-a4-r2-ranked-windows"

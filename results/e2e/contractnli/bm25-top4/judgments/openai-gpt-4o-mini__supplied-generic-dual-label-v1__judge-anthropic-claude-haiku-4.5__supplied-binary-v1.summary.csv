@@ -1,2 +1,0 @@
-generator_model,generator_prompt_version,judge_model,judge_prompt_version,questions,judge_errors,correct,accuracy
-openai/gpt-4o-mini,supplied-generic-dual-label-v1,anthropic/claude-haiku-4.5,supplied-binary-v1,6173,0,5021,0.8133808520978455

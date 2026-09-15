@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from rag_eval.common import ROOT
 
 
-RESULTS_ROOT = ROOT / "results/contractnli-full-dual-label-matrix-6173"
+RESULTS_ROOT = ROOT / "artifacts" / "e2e" / "contractnli"
 GENERATOR_PROMPT_VERSION = "supplied-generic-dual-label-v1"
 GENERATOR_SUFFIX = (
     "Answer True/Entailment or False/Contradiction, followed by a brief explanation."

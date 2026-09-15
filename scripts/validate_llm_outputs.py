@@ -26,7 +26,8 @@ def validate(dataset: str, model: str) -> None:
     expected_effort = effective_reasoning_effort(model, "low")
     slug = model_slug(model)
 
-    generation_path = ROOT / "results" / dataset / "generations" / f"{slug}.parquet"
+    generation_path = (ROOT / "artifacts" / "e2e" / dataset /
+                       "generations" / f"{slug}.parquet")
     generation = pd.read_parquet(generation_path)
     if len(generation) != len(expected_keys) or keys(generation) != expected_keys:
         raise ValueError(f"{dataset}/{model}: incomplete generation key set")
@@ -41,7 +42,7 @@ def validate(dataset: str, model: str) -> None:
     if generation.generated_answer.fillna("").str.strip().eq("").any():
         raise ValueError(f"{dataset}/{model}: empty generated answers")
 
-    judgment_path = (ROOT / "results" / dataset / "judgments" /
+    judgment_path = (ROOT / "artifacts" / "e2e" / dataset / "judgments" /
                      f"{slug}__judge-{slug}.parquet")
     judgment = pd.read_parquet(judgment_path)
     if len(judgment) != len(expected_keys) or keys(judgment) != expected_keys:

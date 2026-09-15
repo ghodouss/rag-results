@@ -16,11 +16,11 @@ from rag_eval.common import atomic_parquet, normalize, relaxed_bigram_match  # n
 
 CACHE = ROOT / "data/contractnli/sentence-source"
 DEFAULT_TEMPLATE = (
-    ROOT / "results/contractnli-top2-preceding-evidence-1000/inputs/"
+    ROOT / "artifacts/experiments/contractnli-top2-preceding-evidence-1000/inputs/"
     "sturdy-top2-preceding.parquet"
 )
 DEFAULT_OUTPUT = (
-    ROOT / "results/contractnli-sentence-a4-r2-ordering-evidence-1000/inputs"
+    ROOT / "artifacts/experiments/contractnli-sentence-a4-r2-ordering-evidence-1000/inputs"
 )
 OUTPUT_COLUMNS = [
     "dataset", "query_id", "split", "source_row", "question", "golden_answer",

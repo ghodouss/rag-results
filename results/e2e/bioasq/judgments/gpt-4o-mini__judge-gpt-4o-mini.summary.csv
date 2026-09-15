@@ -1,3 +1,0 @@
-dataset,retrieval_method,generator_model,judge_model,questions,generation_errors,judge_errors,judged_questions,correct,accuracy,input_tokens,output_tokens
-bioasq,bm25,gpt-4o-mini,gpt-4o-mini,4387,0,0,4387,3266,0.7444723045361294,1174392,206129
-bioasq,sturdy,gpt-4o-mini,gpt-4o-mini,4387,0,0,4387,3255,0.7419648962844768,1174401,206845

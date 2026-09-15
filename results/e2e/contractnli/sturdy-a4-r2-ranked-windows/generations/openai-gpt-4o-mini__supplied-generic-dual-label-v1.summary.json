@@ -1,6 +1,0 @@
-{
-  "generator_model": "openai/gpt-4o-mini",
-  "generator_prompt_version": "supplied-generic-dual-label-v1",
-  "questions": 6173,
-  "generation_errors": 0
-}

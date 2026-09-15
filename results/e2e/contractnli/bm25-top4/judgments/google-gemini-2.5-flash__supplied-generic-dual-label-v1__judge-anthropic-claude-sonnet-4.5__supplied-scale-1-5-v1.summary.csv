@@ -1,2 +1,0 @@
-generator_model,generator_prompt_version,judge_model,judge_prompt_version,questions,generation_errors,judge_errors,mean_score,score_1,score_2,score_3,score_4,score_5
-google/gemini-2.5-flash,supplied-generic-dual-label-v1,anthropic/claude-sonnet-4.5,supplied-scale-1-5-v1,6173,0,0,4.208488579296938,1054,190,15,70,4844

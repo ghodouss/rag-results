@@ -1,0 +1,2 @@
+generator_model,generator_prompt_version,judge_model,judge_prompt_version,questions,judge_errors,correct,accuracy
+google/gemini-2.5-flash,supplied-generic-dual-label-v1,anthropic/claude-haiku-4.5,supplied-binary-v1,6173,0,5080,0.8229386035963066
