@@ -18,9 +18,12 @@ def exact(dataset: str) -> pd.DataFrame:
     for method in ("sturdy", "bm25", "e5", "openai"):
         frame = load(dataset, method)
         row = {"method": method}
+        possible = int(frame["golden_answer_exact_in_full_doc"].sum())
+        if not possible:
+            raise ValueError(f"{dataset}/{method}: no full-document exact matches")
         for rank in range(1, 5):
             row[f"top_{rank}"] = float(
-                frame[f"golden_answer_exact_in_top_{rank}"].mean()
+                frame[f"golden_answer_exact_in_top_{rank}"].sum() / possible
             )
         rows.append(row)
     return pd.DataFrame(rows)

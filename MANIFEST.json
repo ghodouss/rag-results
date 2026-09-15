@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4195,
-      "sha256": "46ac47c9025e4c3665b0dbe1c0100e652b595f2606360c8043ecef32faba5ed1"
+      "bytes": 4326,
+      "sha256": "7864bfdcfea309c6c12aca06f283f986cf1fb04875a39084ebab4c97352d4291"
     },
     {
       "path": "artifacts/e2e/bioasq/generations/gpt-4o-mini.parquet",
@@ -801,8 +801,8 @@
     },
     {
       "path": "scripts/summarize_results.py",
-      "bytes": 2841,
-      "sha256": "8d8cee384b5e818113362a94c5528f01df2f778652e009fbeaa343d115858b3d"
+      "bytes": 3031,
+      "sha256": "74706e6ae0422cf442c7fd05375000359fc00be507dcc17e51f7b66e0777df35"
     },
     {
       "path": "scripts/validate_handoff.py",

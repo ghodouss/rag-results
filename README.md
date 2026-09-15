@@ -32,13 +32,14 @@ sturdy = pd.read_parquet("results/contractnli/sturdy.parquet")
 ### Normalized exact containment
 
 62.40% of supplied documents contain the golden reference evidence span exactly.
+Top-k percentages use those documents as the denominator.
 
 | Method | Top 1 | Top 2 | Top 3 | Top 4 |
 |---|---:|---:|---:|---:|
-| Sturdy | 47.59% | 53.82% | 56.52% | 57.95% |
-| BM25 | 32.30% | 42.69% | 47.34% | 50.12% |
-| `intfloat/e5-small-v2` | 25.63% | 35.67% | 41.83% | 45.81% |
-| OpenAI embedding, model unspecified | 37.96% | 46.35% | 49.98% | 51.85% |
+| Sturdy | 76.27% | 86.24% | 90.58% | 92.86% |
+| BM25 | 51.77% | 68.41% | 75.86% | 80.32% |
+| `intfloat/e5-small-v2` | 41.07% | 57.17% | 67.03% | 73.42% |
+| OpenAI embedding, model unspecified | 60.83% | 74.27% | 80.09% | 83.10% |
 
 ### End-to-end scoring
 
@@ -60,13 +61,14 @@ sturdy = pd.read_parquet("results/contractnli/sturdy.parquet")
 ### Normalized exact containment
 
 12.99% of supplied documents contain the golden answer exactly.
+Top-k percentages use those documents as the denominator.
 
 | Method | Top 1 | Top 2 | Top 3 | Top 4 |
 |---|---:|---:|---:|---:|
-| Sturdy | 5.43% | 7.27% | 8.98% | 9.92% |
-| BM25 | 5.84% | 7.96% | 9.21% | 10.10% |
-| `intfloat/e5-small-v2` | 5.24% | 7.61% | 9.10% | 9.92% |
-| OpenAI embedding, model unspecified | 5.29% | 7.75% | 8.94% | 9.64% |
+| Sturdy | 41.75% | 55.96% | 69.12% | 76.32% |
+| BM25 | 44.91% | 61.23% | 70.88% | 77.72% |
+| `intfloat/e5-small-v2` | 40.35% | 58.60% | 70.00% | 76.32% |
+| OpenAI embedding, model unspecified | 40.70% | 59.65% | 68.77% | 74.21% |
 
 ### End-to-end scoring
 
