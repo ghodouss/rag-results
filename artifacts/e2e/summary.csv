@@ -1,19 +1,19 @@
-dataset,generator,judge,metric,sturdy,bm25,questions,errors,ignored_scores
-contractnli,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary_accuracy,0.822939,0.779524,6173,0,0
-contractnli,google/gemini-2.5-flash,anthropic/claude-sonnet-4.5,mean_score_1_to_5,4.380204,4.208489,6173,0,0
-contractnli,google/gemini-2.5-flash,anthropic/claude-sonnet-4,mean_score_1_to_5,4.352341,4.182731,6173,0,0
-contractnli,openai/gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.845780,0.813381,6173,0,0
-contractnli,openai/gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,4.426211,4.301636,6173,0,0
-contractnli,openai/gpt-4o-mini,anthropic/claude-sonnet-4,mean_score_1_to_5,4.421837,4.285599,6173,0,0
-bioasq,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary_accuracy,0.715067,0.718714,4387,0,0
-bioasq,google/gemini-2.5-flash,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.569956,3.581672,4387,0,42
-bioasq,google/gemini-2.5-flash,anthropic/claude-sonnet-4,mean_score_1_to_5,3.513107,3.529519,4387,0,0
-bioasq,gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.787326,0.789150,4387,0,0
-bioasq,gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,4.000000,4.007798,4387,0,56
-bioasq,gpt-4o-mini,anthropic/claude-sonnet-4,mean_score_1_to_5,3.960109,3.971279,4387,0,0
-finqa,google/gemini-2.5-flash,anthropic/claude-haiku-4.5,binary_accuracy,0.447288,0.439130,6251,0,0
-finqa,google/gemini-2.5-flash,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.161254,3.123500,6251,0,0
-finqa,google/gemini-2.5-flash,anthropic/claude-sonnet-4,mean_score_1_to_5,3.118381,3.075348,6251,0,0
-finqa,gpt-4o-mini,anthropic/claude-haiku-4.5,binary_accuracy,0.471285,0.472404,6251,0,0
-finqa,gpt-4o-mini,anthropic/claude-sonnet-4.5,mean_score_1_to_5,3.418973,3.429211,6251,0,0
-finqa,gpt-4o-mini,anthropic/claude-sonnet-4,mean_score_1_to_5,3.385538,3.381379,6251,0,0
+dataset,generator,judge,metric,sturdy,bm25,e5,openai,questions,errors,ignored_scores
+contractnli,Gemini 2.5 Flash,Claude Haiku 4.5,binary_accuracy,0.8229386035963066,0.779523732382958,0.7612182083265835,0.7602462335979264,6173,0,0
+contractnli,Gemini 2.5 Flash,Claude Sonnet 4.5,mean_score_1_to_5,4.380204114693018,4.208488579296938,,,6173,0,0
+contractnli,Gemini 2.5 Flash,Claude Sonnet 4,mean_score_1_to_5,4.352340839138183,4.182731248987526,4.1088611696095905,4.088125708731573,6173,0,0
+contractnli,GPT-4o mini,Claude Haiku 4.5,binary_accuracy,0.8457800097197473,0.8133808520978455,0.8133808520978455,0.81516280576705,6173,0,0
+contractnli,GPT-4o mini,Claude Sonnet 4.5,mean_score_1_to_5,4.4262109185161185,4.301636157459906,,,6173,0,0
+contractnli,GPT-4o mini,Claude Sonnet 4,mean_score_1_to_5,4.421837032237161,4.285598574437064,4.278956747124575,4.290782439656569,6173,0,0
+bioasq,Gemini 2.5 Flash,Claude Haiku 4.5,binary_accuracy,0.7150672441303852,0.7187143834055163,0.701162525643948,0.6995669022110782,4387,0,0
+bioasq,Gemini 2.5 Flash,Claude Sonnet 4.5,mean_score_1_to_5,3.5699564918708497,3.581672394043528,,,4387,0,42
+bioasq,Gemini 2.5 Flash,Claude Sonnet 4,mean_score_1_to_5,3.5131069067700023,3.529519033508092,3.457260086619558,3.468201504444951,4387,0,0
+bioasq,GPT-4o mini,Claude Haiku 4.5,binary_accuracy,0.7873261910189195,0.7891497606564851,0.7741053111465694,0.7738773649418738,4387,0,0
+bioasq,GPT-4o mini,Claude Sonnet 4.5,mean_score_1_to_5,4.0,4.007798165137615,,,4387,0,56
+bioasq,GPT-4o mini,Claude Sonnet 4,mean_score_1_to_5,3.960109414178254,3.971278778208343,3.9190790973330296,3.9279689993161613,4387,0,0
+finqa,Gemini 2.5 Flash,Claude Haiku 4.5,binary_accuracy,0.4472884338505839,0.43912973924172133,0.43385058390657494,0.4357702767557191,6251,0,0
+finqa,Gemini 2.5 Flash,Claude Sonnet 4.5,mean_score_1_to_5,3.1612541993281074,3.123500239961606,,,6251,0,0
+finqa,Gemini 2.5 Flash,Claude Sonnet 4,mean_score_1_to_5,3.118381059030555,3.0753479443289073,3.049592065269557,3.069588865781475,6251,0,0
+finqa,GPT-4o mini,Claude Haiku 4.5,binary_accuracy,0.47128459446488563,0.47240441529355304,0.46328587426011836,0.47576387777955526,6251,0,0
+finqa,GPT-4o mini,Claude Sonnet 4.5,mean_score_1_to_5,3.418972964325708,3.42921132618781,,,6251,0,0
+finqa,GPT-4o mini,Claude Sonnet 4,mean_score_1_to_5,3.3855383138697808,3.381378979363302,3.3114701647736364,3.356902895536714,6251,0,0

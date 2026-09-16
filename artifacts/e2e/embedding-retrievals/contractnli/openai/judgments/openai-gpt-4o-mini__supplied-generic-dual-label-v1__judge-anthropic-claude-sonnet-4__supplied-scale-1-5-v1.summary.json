@@ -1,0 +1,15 @@
+{
+  "generator_model": "openai/gpt-4o-mini",
+  "generator_prompt_version": "supplied-generic-dual-label-v1",
+  "judge_model": "anthropic/claude-sonnet-4",
+  "judge_prompt_version": "supplied-scale-1-5-v1",
+  "questions": 6173,
+  "generation_errors": 0,
+  "judge_errors": 0,
+  "mean_score": 4.290782439656569,
+  "score_1": 1047,
+  "score_2": 47,
+  "score_3": 0,
+  "score_4": 49,
+  "score_5": 5030
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the ten canonical result Parquets and the package manifest."""
+"""Validate the twelve canonical result Parquets and the package manifest."""
 from __future__ import annotations
 
 import importlib.util
@@ -15,7 +15,7 @@ ROWS = {"contractnli": 6173, "bioasq": 4387, "finqa": 6251}
 METHODS = {
     "contractnli": ("sturdy", "bm25", "e5", "openai"),
     "bioasq": ("sturdy", "bm25", "e5", "openai"),
-    "finqa": ("sturdy", "bm25"),
+    "finqa": ("sturdy", "bm25", "e5", "openai"),
 }
 RETRIEVAL_ERRORS = {("bioasq", "sturdy"): 23}
 
@@ -23,7 +23,7 @@ EXACT_COUNTS = {
     ("contractnli", "sturdy"): (2938, 3322, 3489, 3577, 3852),
     ("contractnli", "bm25"): (1994, 2635, 2922, 3094, 3852),
     ("contractnli", "e5"): (1582, 2202, 2582, 2828, 3852),
-    ("contractnli", "openai"): (2343, 2861, 3085, 3201, 3852),
+    ("contractnli", "openai"): (1954, 2466, 2690, 2806, 3852),
     ("bioasq", "sturdy"): (238, 319, 394, 435, 570),
     ("bioasq", "bm25"): (256, 349, 404, 443, 570),
     ("bioasq", "e5"): (230, 334, 399, 435, 570),
@@ -31,6 +31,18 @@ EXACT_COUNTS = {
 }
 
 JUDGMENT_COUNTS = {
+    ("contractnli", "e5"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__judge_correct": 4699,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 25364,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__judge_correct": 5021,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 26414,
+    },
+    ("contractnli", "openai"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__judge_correct": 4693,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 25236,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__judge_correct": 5032,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 26487,
+    },
     ("contractnli", "sturdy"): {
         "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__judge_correct": 5080,
         "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 27039,
@@ -67,6 +79,18 @@ JUDGMENT_COUNTS = {
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 3266,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 3695,
     },
+    ("bioasq", "e5"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 3076,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 15167,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__verdict": 3396,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 17193,
+    },
+    ("bioasq", "openai"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 3069,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 15215,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__verdict": 3395,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 17232,
+    },
     ("finqa", "sturdy"): {
         "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 2796,
         "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4_5__score": 19761,
@@ -86,6 +110,18 @@ JUDGMENT_COUNTS = {
         "judgment_gpt_4o_mini__anthropic_claude_sonnet_4__score": 21137,
         "judgment_gpt_4o_mini__gpt_4o_mini__verdict": 2544,
         "judgment_gpt_5_6_luna__gpt_5_6_luna__verdict": 4748,
+    },
+    ("finqa", "e5"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 2712,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 19063,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__verdict": 2896,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 20700,
+    },
+    ("finqa", "openai"): {
+        "judgment_google_gemini_2_5_flash__anthropic_claude_haiku_4_5__verdict": 2724,
+        "judgment_google_gemini_2_5_flash__anthropic_claude_sonnet_4__score": 19188,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_haiku_4_5__verdict": 2974,
+        "judgment_openai_gpt_4o_mini__anthropic_claude_sonnet_4__score": 20984,
     },
 }
 
@@ -107,7 +143,7 @@ def validate_results() -> None:
     }
     actual_paths = set((ROOT / "results").rglob("*.parquet"))
     if actual_paths != expected_paths:
-        raise ValueError("results/ must contain exactly the ten canonical Parquets")
+        raise ValueError("results/ must contain exactly the twelve canonical Parquets")
 
     for dataset, rows in ROWS.items():
         frames = {}
@@ -187,10 +223,10 @@ def validate_results() -> None:
                         f"{dataset}/{method}: {column} expected {expected}, found {actual}"
                     )
 
-        left = set(frames["sturdy"].query_id.astype(str))
-        right = set(frames["bm25"].query_id.astype(str))
-        if left != right:
-            raise ValueError(f"{dataset}: Sturdy and BM25 question IDs differ")
+        expected_ids = set(frames["sturdy"].query_id.astype(str))
+        for method, frame in frames.items():
+            if set(frame.query_id.astype(str)) != expected_ids:
+                raise ValueError(f"{dataset}: {method} question IDs differ")
 
 
 def validate_manifest_and_sizes() -> None:
@@ -217,7 +253,7 @@ def validate_manifest_and_sizes() -> None:
 def validate() -> None:
     validate_results()
     validate_manifest_and_sizes()
-    print("valid package: ten canonical result Parquets, metrics, manifest, and sizes")
+    print("valid package: twelve canonical result Parquets, metrics, manifest, and sizes")
 
 
 if __name__ == "__main__":

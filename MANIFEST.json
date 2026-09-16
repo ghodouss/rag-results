@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6091,
-      "sha256": "8239b1a0b0e432ef78ca0b9a2cb77d3d34904a1b83d6be9fad59a66f9fe1633a"
+      "bytes": 6960,
+      "sha256": "2b4c6dbb345eb56571468e2ffb408453227a4887fde28123b53414ecd379e901"
     },
     {
       "path": "artifacts/e2e/bioasq/generations/google-gemini-2.5-flash.parquet",
@@ -479,6 +479,407 @@
       "sha256": "74cecfc25551342bb23323c05dc44d9c23586d0cebd099acedc0c77149493940"
     },
     {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/generations/google-gemini-2.5-flash.parquet",
+      "bytes": 2056495,
+      "sha256": "797213e8e0991264617b973b54d446626207c6d4f5ebbd0f9bf1b935fe6b97fd",
+      "rows": 8774,
+      "columns": 18
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/generations/openai-gpt-4o-mini.parquet",
+      "bytes": 2336179,
+      "sha256": "389a2a559ff7bcc25a61541deac35e61140f5b223fb71c6d0c623325d690e8a3",
+      "rows": 8774,
+      "columns": 18
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/input/embeddings.parquet",
+      "bytes": 16303353,
+      "sha256": "916d226622b482bd775976a95e66fe6b3d061f317db88db3fe5621bd4ed132e6",
+      "rows": 8774,
+      "columns": 6
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 3649316,
+      "sha256": "11e388fe6c84f80bc4d6a334dd5639e27c9da264ab8e183612714419ec2061ac",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 431,
+      "sha256": "089a8107e5f187ed92c7b9abeafce6df52deec92493e70fd3cae9302c9bd7830"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 876,
+      "sha256": "4bcf0cf69afa67dc3b9f1ff8e701254303338a19893469014d0eff8fc3139275"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 2998860,
+      "sha256": "7fdb8010114f2cac2dcd8c174364a4038cd8fc47e9405656533e3429738f120c",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 548,
+      "sha256": "12a0d1b0cc6ccf950c67e4b7d8c3c8ad8cf6a8397c4ed25e12914fbbb97b2894"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1155,
+      "sha256": "b725158bfe3d699917aed5a91a7b2887a7329e37a5dcf89203b1efd726ad640d"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 4164494,
+      "sha256": "2189f12b8b74d8767211293b803399aa422cfdb4b03cca653957998d0efc0f71",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 422,
+      "sha256": "55555ee62fd3d63878b7da53ea63958d24aa39360726fc73735367b08f314ea1"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 867,
+      "sha256": "00a2a06dbd541b63425edb7d5cb0b8ecc9a645e3e5369925556ec074063f3571"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 3473341,
+      "sha256": "a0112b48b19eea2d62b073a8ce0c4365121d8a64c4d4493e09e3b9de5485d719",
+      "rows": 8774,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 540,
+      "sha256": "d1faa814f61307fd129cefdd3e7202a36f14584401c0241e60cf192f7c5eb0b3"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/bioasq/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1147,
+      "sha256": "ab145cad2906fb4c59961750196e8fa392e665cdfb4c3450f02f715200eaf8a1"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
+      "bytes": 5744543,
+      "sha256": "d625482aeef17a31b556f7e7ca51537c1045a1a5eafbf0860ae29bf8c9c72160",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 226,
+      "sha256": "8691a5b009dccd7a13ae049c5fb82c457fb8332933ef6e64b14cc0298fcfa684"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 287,
+      "sha256": "fd70e7da97385d0e4a96e584c3e73e928a041532cd758dac880d82ba8465611c"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
+      "bytes": 5605114,
+      "sha256": "23ea65a0bcf6a4c3a354b70ca6c88f39b1b66322a4d6f671647f94d7a3fbc444",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 221,
+      "sha256": "4d63e4597a28b16e3348e517627f2565c3367000c456c0e506f50353e57aa201"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 282,
+      "sha256": "6e47b9761fb0af7d581c542118a8498390dbcf0f8400011eaa381c1ea5bfe57b"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 6344073,
+      "sha256": "854b696154a13150aec5189962925be91867b2764c472fba7966fd86f1a2b315",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 288,
+      "sha256": "4adc5f3c8e89763f8c10587fef7e3e447b582c6ea9e63660ee5eeff975c023bd"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 359,
+      "sha256": "8e20423e5746da09fbb29a20cc421d29fc5e0d6df0cd773c6e57f768393f47fa"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 6668051,
+      "sha256": "320217070c208cb0ce23f5aecbd4aed5cb44d75dcedf1962aac593417f92de94",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 316,
+      "sha256": "0d6c6f7677bf4dc34333c4db3783f096a3c21379dd47f6438e8cb4ea4db824e3"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 405,
+      "sha256": "ade978e649049122860e89588c532985dc2f31c63e041d3ea39ca145e782a7bf"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 6201426,
+      "sha256": "11fc226502650caed2d0e89c172e6af8923c46d2b35b8aeda506cd9253f2e206",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 283,
+      "sha256": "f20f9bd852762be50ab664ac5199c75705d300cc54defd160f2600657de5a298"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 354,
+      "sha256": "5ef790b56f06ea7aeec20aa0718998fb0816a45a0d59292a98d6268c7585ee25"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 6423122,
+      "sha256": "53ae936416c733249e3c786425d3caf52ab83219ea64cde4e0cf29136b61d8d8",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 309,
+      "sha256": "c1ab7dd459f5ff18e17d669ad2d66b1f102e738dae2005c58eed6fb6a813b035"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/e5-small-v2/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 398,
+      "sha256": "8e0c33024ceb71483339d0cf0eba82f2cc77cb26bacc5174ecfd1a6b3ffc406e"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/input/e5-small-v2.parquet",
+      "bytes": 4992605,
+      "sha256": "7103988487cf9adee38dae10457d9d0621e02669a7d4460aa062bfabd1cfa27a",
+      "rows": 6173,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/input/openai.parquet",
+      "bytes": 5166015,
+      "sha256": "863b1c1bb5b809cd501223f6910094bd4a91e067d90d7f508cddc22a831c9c08",
+      "rows": 6173,
+      "columns": 14
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.parquet",
+      "bytes": 5957124,
+      "sha256": "81b66e1a322081977bc5a5288e1899442aee4c57ab41813f9e397d6f48a0bcf3",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 226,
+      "sha256": "8691a5b009dccd7a13ae049c5fb82c457fb8332933ef6e64b14cc0298fcfa684"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/google-gemini-2.5-flash__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 287,
+      "sha256": "fd70e7da97385d0e4a96e584c3e73e928a041532cd758dac880d82ba8465611c"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.parquet",
+      "bytes": 5774685,
+      "sha256": "760e6218d5f3b5f84ff09bb01a9a048d36c66c5980308cf60ccdd67319df6c79",
+      "rows": 6173,
+      "columns": 30
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.csv",
+      "bytes": 221,
+      "sha256": "4d63e4597a28b16e3348e517627f2565c3367000c456c0e506f50353e57aa201"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/generations/openai-gpt-4o-mini__supplied-generic-dual-label-v1.summary.json",
+      "bytes": 282,
+      "sha256": "6e47b9761fb0af7d581c542118a8498390dbcf0f8400011eaa381c1ea5bfe57b"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 6565009,
+      "sha256": "f16e9dea10112d1810ddbc132d9ecc3ac2004d00927f8669b570492cb2ee37c7",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 288,
+      "sha256": "22585255ae8d4c9a282214b0c2909e772c07f1d16262525161fdb938da1bfcc7"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 359,
+      "sha256": "37b8218f8a54b9a4bebc2dce4428a869509e9b70f32a92a617044fd707d67714"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 6889404,
+      "sha256": "f9d93f7c0fe3119b01c656e805e16e776b28ed3ef8031df886b1d36aababb373",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 315,
+      "sha256": "dca59b30b0ab48985dc47fc6cbd925aa0b0d9765385f14b50faa4af1224f9af6"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/google-gemini-2.5-flash__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 404,
+      "sha256": "f0974378a4154f8bddf46e3ddb6e8323c74c9119d429a92c4c431270f36d5914"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.parquet",
+      "bytes": 6377255,
+      "sha256": "4e2ef627f0d228f6c285e4c67c5b49fb5c5a786a0634c5873b6c8b691659c91a",
+      "rows": 6173,
+      "columns": 42
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.csv",
+      "bytes": 281,
+      "sha256": "dc02149e29d75208141c69e3503a5d0bf49ee459aa2fc1ee14bc4d9fd80de840"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-haiku-4.5__supplied-binary-v1.summary.json",
+      "bytes": 352,
+      "sha256": "9b8a2bb31b3b10a7633b4211a75ee7ecc56ade4cd419a6d9190e6d1bd396dd59"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.parquet",
+      "bytes": 6596744,
+      "sha256": "2749fd1b5407be62967449a6543ca06cde2e885a589944cbcf0df5d4bf4f97cc",
+      "rows": 6173,
+      "columns": 43
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.csv",
+      "bytes": 309,
+      "sha256": "52ba6de819f16d1a35118466a23c94a0cda70a8ab9e31d6a26f90d52127410ea"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/contractnli/openai/judgments/openai-gpt-4o-mini__supplied-generic-dual-label-v1__judge-anthropic-claude-sonnet-4__supplied-scale-1-5-v1.summary.json",
+      "bytes": 398,
+      "sha256": "e07678e98224d52ae5fec8471c4d0c0c3a8b3f374a2f60a3b52aa8b2561cc6f1"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/generations/google-gemini-2.5-flash.parquet",
+      "bytes": 1352577,
+      "sha256": "8697879fe5b5367bd226097501f37bd775643275b8d6fc1ee9ed762b1f200ec5",
+      "rows": 12502,
+      "columns": 18
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/generations/openai-gpt-4o-mini.parquet",
+      "bytes": 1836304,
+      "sha256": "023bfcf793faff2dd13d2a0ca332a4a14e3381e6fdea51134cd847e95b77b245",
+      "rows": 12502,
+      "columns": 18
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/input/embeddings.parquet",
+      "bytes": 8840378,
+      "sha256": "9c6188c8750624a68c1a7d55819563f9222b4a71d4d44ea0a3bc54ab4e906b38",
+      "rows": 12502,
+      "columns": 6
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 2647347,
+      "sha256": "68d29b296f4c60ef573be779b58c73776c69cb8316c1e6aaef297ce41124211d",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 477,
+      "sha256": "3cad9c821c8a0558080e362843d08522d93940b52bc8ab1f1d9d02240bc115e4"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 922,
+      "sha256": "1bffe77a42765408a4facade00047234960a86e8edbd254bbf5865b764ea9370"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 1994921,
+      "sha256": "912ab76fe04b43f7dbaf1839f7fbfd5400b474d253f712ed38686437048f0554",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 588,
+      "sha256": "7886f366f584b7e012e53a055981c2b849e55cba510e54ca2e96a5e03864d44d"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/google-gemini-2.5-flash__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1195,
+      "sha256": "520af1b75164a901c3bc3bf8e2208ba8ffc3978b9330ad3b384b633b337d2a30"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.parquet",
+      "bytes": 3717138,
+      "sha256": "25af90bb26b7e2a22ae60de7c41981b34aa970355b4894c674daf7c899168062",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.summary.csv",
+      "bytes": 468,
+      "sha256": "58ecf40872fecbddd933cfc534eefbf4f2d3ebf6a5cedecee8a14a8d01357766"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-haiku-4.5.summary.json",
+      "bytes": 913,
+      "sha256": "7f5f7401651f2cf02e7f47bb9a08e6e8a2331499ee0f96bf960f6424ff1156ce"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.parquet",
+      "bytes": 3039771,
+      "sha256": "d320e5f1ca7626881ae7bb1a99dddd2294a4bd1e56250e054a48ac49f7252a5f",
+      "rows": 12502,
+      "columns": 26
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.csv",
+      "bytes": 581,
+      "sha256": "fe52746c3d91ae66490e32b263f1847ed883931c134609c230c94625fe52dbb2"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/finqa/judgments/openai-gpt-4o-mini__judge-anthropic-claude-sonnet-4.summary.json",
+      "bytes": 1188,
+      "sha256": "271e46de5c326def7d6fe27da62a6b59c95fd37c9531c4e4d8d3a1c6b57216d1"
+    },
+    {
+      "path": "artifacts/e2e/embedding-retrievals/provenance.json",
+      "bytes": 486,
+      "sha256": "8700b08c34c3d5ed51de690ba880283695432b1139a87b40a2ffd8d7eb7df309"
+    },
+    {
       "path": "artifacts/e2e/finqa/generations/google-gemini-2.5-flash.parquet",
       "bytes": 1308354,
       "sha256": "e7e5d3f40bed30f79c91c081671244a2be9c79997349b8ee1e44fac99c184012",
@@ -647,33 +1048,33 @@
     },
     {
       "path": "artifacts/e2e/summary.csv",
-      "bytes": 1856,
-      "sha256": "f65133317977be988ff00f7866426eadebc648b91950493ede77a5f1790a50b6"
+      "bytes": 2391,
+      "sha256": "db549e00900ae1a348a345e8f013dd187f3c89540e97e3bb0544d1ddd4ac0acf"
     },
     {
       "path": "artifacts/e2e/summary.json",
-      "bytes": 4819,
-      "sha256": "828365b2031f4550d0e59aac39b9b7f723d03553204997b133d4d928e778c9c7"
+      "bytes": 5759,
+      "sha256": "621136f9ac44be148fe60c12e55fdf4c8a9701e887bce836591ce0b88443dd32"
     },
     {
       "path": "artifacts/legacy-summaries/containment/neural-summary.csv",
       "bytes": 2032,
-      "sha256": "5c812fd8c183d2b6d4fae58fac837c5315b4a43259286a3284169a4066c59e51"
+      "sha256": "49e965f1534c9fd3255a3c4666ad6df402b18754ba6a9800d59d4c408a020a2f"
     },
     {
       "path": "artifacts/legacy-summaries/containment/neural-summary.json",
-      "bytes": 5213,
-      "sha256": "916e0709d8d1c010ceba8cdc476714af038a4aa000fbf80f186d85a619d6a93e"
+      "bytes": 5205,
+      "sha256": "46ac76fb68f6c7edb6273200539ec98b847bfc30b1bbae7547f61366cf23bb7d"
     },
     {
       "path": "artifacts/legacy-summaries/containment/summary.csv",
       "bytes": 961,
-      "sha256": "9f6350a9e05e8ac8252cb6c92194dd448d0f552a2c7d86619e1f5fa3b9d4779d"
+      "sha256": "a2a53be617445b0d0d3ad3cbc432cc4142dd08d0b4d7b69c5de1e44c5336db86"
     },
     {
       "path": "artifacts/legacy-summaries/containment/summary.json",
       "bytes": 2380,
-      "sha256": "c6cdd957618a26fb603e55cad2c5105e700e12a61feb38f14c7412bc823e1406"
+      "sha256": "7d88bf77dc15ec126b7104cd8e29d10d3741b0817ee7ec2bf6797c279439f021"
     },
     {
       "path": "config/datasets.json",
@@ -766,8 +1167,8 @@
     },
     {
       "path": "data/contractnli/retrieval/openai-embedding-model-unspecified.parquet",
-      "bytes": 9670968,
-      "sha256": "7001c61507783b935e3e8c91849b5b6387f80c0a216b8faf44fc7e918892220c",
+      "bytes": 9630159,
+      "sha256": "ded38c364517f2b1b802538cdfee735005557501af976e2f5a987c0dc1f64456",
       "rows": 6173,
       "columns": 11
     },
@@ -850,8 +1251,8 @@
     },
     {
       "path": "provenance/SOURCES.md",
-      "bytes": 9476,
-      "sha256": "0cad5fccef363ac6950d1a7f96a6114c8380053869e685d906bcf987c6bcc96c"
+      "bytes": 10659,
+      "sha256": "b14c10456ead233655103799e4d57b0bd6a65bd4c9d9c156be22388375dd44de"
     },
     {
       "path": "provenance/frozen-pilot/contractnli-sturdy-a4-r2-ranked-windows-1000.parquet",
@@ -874,17 +1275,17 @@
     },
     {
       "path": "results/bioasq/e5.parquet",
-      "bytes": 16161812,
-      "sha256": "91807637f77ddc9699984a7b2fe756f1c3725d53adbb1d918edc4892c5cbf83c",
+      "bytes": 21103917,
+      "sha256": "2c59da6e64939cfdeb4624a8523990dfca1e3a318bbd68b11136bb7f0dc28e62",
       "rows": 4387,
-      "columns": 24
+      "columns": 112
     },
     {
       "path": "results/bioasq/openai.parquet",
-      "bytes": 16098690,
-      "sha256": "2c058f9ae28a4f76fade2dbd0f860fdff92e1d5cffe2b2fa9d554b923c8efeb4",
+      "bytes": 21068071,
+      "sha256": "278dbe435cf9878642ddae308fd80ce3513f35b2c82db1574d43c609e885ba39",
       "rows": 4387,
-      "columns": 24
+      "columns": 112
     },
     {
       "path": "results/bioasq/sturdy.parquet",
@@ -902,17 +1303,17 @@
     },
     {
       "path": "results/contractnli/e5.parquet",
-      "bytes": 7852907,
-      "sha256": "ec8c1516a004ff45f8c096c12a7d23a9afdaf8ff49ca0cf1a110ae2604ed471f",
+      "bytes": 14634495,
+      "sha256": "e357d5a853cc4e990d17f52f4631b4a3631b7662297a21b08b1625a746b0e915",
       "rows": 6173,
-      "columns": 26
+      "columns": 114
     },
     {
       "path": "results/contractnli/openai.parquet",
-      "bytes": 8237501,
-      "sha256": "a336c587e8d6146aa4356b9ee32c0d5383c4000481150580769fbdb08e992132",
+      "bytes": 15035262,
+      "sha256": "71f1eb99c7cc89ffeae58563201746d35e5564aa6b866312c2bd0b396e6c0c9e",
       "rows": 6173,
-      "columns": 26
+      "columns": 114
     },
     {
       "path": "results/contractnli/sturdy.parquet",
@@ -927,6 +1328,20 @@
       "sha256": "9cb58f11d0b94b72f9d9b39cf2f9a74dbe8c5279d8ed44cd2383fa7dd9cddc75",
       "rows": 6251,
       "columns": 174
+    },
+    {
+      "path": "results/finqa/e5.parquet",
+      "bytes": 13533347,
+      "sha256": "7e36663ca3c6e62cd945297cf4fddafd8995fd3d365519ff227fd0015196fb64",
+      "rows": 6251,
+      "columns": 108
+    },
+    {
+      "path": "results/finqa/openai.parquet",
+      "bytes": 13328847,
+      "sha256": "27742472239417521a4277836c0106fa85cab473bd1e89d84a40a0293a1b7de8",
+      "rows": 6251,
+      "columns": 108
     },
     {
       "path": "results/finqa/sturdy.parquet",
@@ -967,8 +1382,8 @@
     },
     {
       "path": "scripts/build_result_parquets.py",
-      "bytes": 14412,
-      "sha256": "634753a8e5e731a49e7159f80b4a06a47649c588777a244f8e0560cec15b30c9"
+      "bytes": 16656,
+      "sha256": "081e22d237e229b06c0d806c158bd54e31c3b05272c21e56f6147870fa9ecca2"
     },
     {
       "path": "scripts/build_retrieval_qrels.py",
@@ -1081,6 +1496,11 @@
       "sha256": "de9f60a178a982edb2824c7ce8f841171e844235a7efc4e4e316c55ddde96673"
     },
     {
+      "path": "scripts/run_embedding_e2e_matrix.py",
+      "bytes": 11813,
+      "sha256": "88617766225a8a56f9e511e6ad01921a3a1844f9b04af70eebe70695dfd6a4da"
+    },
+    {
       "path": "scripts/run_gemini_independent_judges.py",
       "bytes": 1928,
       "sha256": "54914e873355a47fe416b1da7784511f2bc78e8fa0fd56d4c9cc7debf05efdb9"
@@ -1107,8 +1527,8 @@
     },
     {
       "path": "scripts/summarize_results.py",
-      "bytes": 4291,
-      "sha256": "c027d86011d09da5e7f81195d34e5432763b48b6bfaf01619eba43cfb056ba2a"
+      "bytes": 7200,
+      "sha256": "dcaa739ea02c1506dc519e89f864a976d1b169b191b5f8c4083eaecd3bda983b"
     },
     {
       "path": "scripts/validate_handoff.py",
@@ -1122,8 +1542,8 @@
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 11319,
-      "sha256": "c83ad982d75680a77794babe7ea69b0ba7b365ab304df826389f417ba4c1e93f"
+      "bytes": 13609,
+      "sha256": "5e86f8b49690bf8dac60890d845639057c34f64e1151b1a5ef0d70a02fd6453f"
     },
     {
       "path": "scripts/write_manifest.py",

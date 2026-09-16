@@ -13,6 +13,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNS_ROOT = ROOT / "artifacts" / "e2e"
+EMBEDDING_RUNS_ROOT = RUNS_ROOT / "embedding-retrievals"
 sys.path.insert(0, str(ROOT / "src"))
 from rag_eval.common import atomic_parquet, normalize  # noqa: E402
 
@@ -22,7 +23,7 @@ EXACT_DATASETS = ("contractnli", "bioasq")
 METHODS_BY_DATASET = {
     "contractnli": ("sturdy", "bm25", "e5", "openai"),
     "bioasq": ("sturdy", "bm25", "e5", "openai"),
-    "finqa": ("sturdy", "bm25"),
+    "finqa": ("sturdy", "bm25", "e5", "openai"),
 }
 NEURAL_FILES = {
     "e5": "e5-small-v2.parquet",
@@ -127,6 +128,18 @@ def contract_input(method: str) -> pd.DataFrame:
     return frame
 
 
+def embedding_input(dataset: str, method: str) -> pd.DataFrame:
+    if dataset == "contractnli":
+        condition = "e5-small-v2" if method == "e5" else "openai"
+        path = EMBEDDING_RUNS_ROOT / dataset / "input" / f"{condition}.parquet"
+        frame = pd.read_parquet(path)
+    else:
+        path = EMBEDDING_RUNS_ROOT / dataset / "input/embeddings.parquet"
+        frame = method_rows(path, method)
+    require_unique(frame, ["query_id"], f"{dataset}/{method} embedding input")
+    return frame
+
+
 def full_doc_flags(dataset: str, frame: pd.DataFrame) -> pd.Series:
     documents = pd.read_parquet(ROOT / "data" / dataset / "documents.parquet")
     text_by_doc = (
@@ -215,7 +228,22 @@ def base_frame(dataset: str, method: str) -> pd.DataFrame:
     elif dataset == "contractnli":
         result["reference_evidence"] = result["golden_answer"]
         result["golden_answer"] = result["choice"]
-        result["retrieved_context"] = reconstructed_context(source)
+        inputs = embedding_input(dataset, method).sort_values("source_row").reset_index(drop=True)
+        if not inputs.query_id.astype(str).equals(result.query_id.astype(str)):
+            raise ValueError(f"contractnli/{method}: retrieval and generation inputs differ")
+        result["retrieved_context"] = inputs["retrieved_context"].to_numpy()
+        copy_if_present(inputs, result, (
+            "selection_rank", "selection_version", "selection_key",
+            "retrieval_context_sha256",
+        ))
+    elif method in NEURAL_FILES:
+        inputs = embedding_input(dataset, method).copy()
+        if set(inputs.query_id.astype(str)) != set(result.query_id.astype(str)):
+            raise ValueError(f"{dataset}/{method}: retrieval and generation inputs differ")
+        contexts = dict(zip(
+            inputs.query_id.astype(str), inputs.retrieved_context.astype(str)
+        ))
+        result["retrieved_context"] = result.query_id.astype(str).map(contexts)
     else:
         result["retrieved_context"] = reconstructed_context(source)
 
@@ -243,7 +271,12 @@ JUDGMENT_FIELDS = (
 
 
 def generation_paths(dataset: str, method: str) -> list[Path]:
-    if dataset == "contractnli":
+    if method in NEURAL_FILES and dataset == "contractnli":
+        condition = "e5-small-v2" if method == "e5" else "openai"
+        root = EMBEDDING_RUNS_ROOT / dataset / condition / "generations"
+    elif method in NEURAL_FILES:
+        root = EMBEDDING_RUNS_ROOT / dataset / "generations"
+    elif dataset == "contractnli":
         condition = "sturdy-a4-r2-ranked-windows" if method == "sturdy" else "bm25-top4"
         root = RUNS_ROOT / "contractnli" / condition / "generations"
     else:
@@ -252,7 +285,12 @@ def generation_paths(dataset: str, method: str) -> list[Path]:
 
 
 def judgment_paths(dataset: str, method: str) -> list[Path]:
-    if dataset == "contractnli":
+    if method in NEURAL_FILES and dataset == "contractnli":
+        condition = "e5-small-v2" if method == "e5" else "openai"
+        root = EMBEDDING_RUNS_ROOT / dataset / condition / "judgments"
+    elif method in NEURAL_FILES:
+        root = EMBEDDING_RUNS_ROOT / dataset / "judgments"
+    elif dataset == "contractnli":
         condition = "sturdy-a4-r2-ranked-windows" if method == "sturdy" else "bm25-top4"
         root = RUNS_ROOT / "contractnli" / condition / "judgments"
     else:
@@ -262,8 +300,15 @@ def judgment_paths(dataset: str, method: str) -> list[Path]:
 
 def method_rows(path: Path, method: str) -> pd.DataFrame:
     frame = pd.read_parquet(path)
-    if "retrieval_method" in frame and method in set(frame.retrieval_method.astype(str)):
-        frame = frame[frame.retrieval_method.astype(str).eq(method)].copy()
+    aliases = {
+        "e5": {"e5", "intfloat/e5-small-v2"},
+        "openai": {"openai", "openai/embedding-model-unspecified"},
+    }.get(method, {method})
+    if "retrieval_method" in frame:
+        available = set(frame.retrieval_method.astype(str))
+        matches = available & aliases
+        if matches:
+            frame = frame[frame.retrieval_method.astype(str).isin(matches)].copy()
     require_unique(frame, ["query_id"], str(path.relative_to(ROOT)))
     return frame
 
@@ -282,8 +327,6 @@ def merge_namespaced(result: pd.DataFrame, source: pd.DataFrame, prefix: str,
 
 
 def add_outputs(dataset: str, method: str, result: pd.DataFrame) -> pd.DataFrame:
-    if method in NEURAL_FILES:
-        return result
     for path in generation_paths(dataset, method):
         frame = method_rows(path, method)
         if len(frame) != len(result):

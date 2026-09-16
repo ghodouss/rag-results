@@ -40,10 +40,10 @@
     "dataset": "contractnli",
     "retrieval_method": "openai/embedding-model-unspecified",
     "rows": 6173,
-    "golden_answer_exact_in_top_1": 0.3795561315,
-    "golden_answer_exact_in_top_2": 0.4634699498,
-    "golden_answer_exact_in_top_3": 0.4997570063,
-    "golden_answer_exact_in_top_4": 0.5185485177,
+    "golden_answer_exact_in_top_1": 0.31653977,
+    "golden_answer_exact_in_top_2": 0.3994816135,
+    "golden_answer_exact_in_top_3": 0.43576867,
+    "golden_answer_exact_in_top_4": 0.4545601814,
     "golden_answer_exact_in_full_doc": null,
     "top_4_containment_when_possible": null
   },
@@ -112,12 +112,12 @@
     "dataset": "contractnli",
     "retrieval_method": "openai/embedding-model-unspecified",
     "rows": 6173,
-    "golden_answer_exact_in_top_1": 0.3795561315,
-    "golden_answer_exact_in_top_2": 0.4634699498,
-    "golden_answer_exact_in_top_3": 0.4997570063,
-    "golden_answer_exact_in_top_4": 0.5185485177,
+    "golden_answer_exact_in_top_1": 0.31653977,
+    "golden_answer_exact_in_top_2": 0.3994816135,
+    "golden_answer_exact_in_top_3": 0.43576867,
+    "golden_answer_exact_in_top_4": 0.4545601814,
     "golden_answer_exact_in_full_doc": 0.6240077758,
-    "top_4_containment_when_possible": 0.8309968847
+    "top_4_containment_when_possible": 0.7284527518
   },
   {
     "scope": "packaged_questions",

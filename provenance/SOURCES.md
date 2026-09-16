@@ -55,6 +55,8 @@ The E5 condition is identified as `intfloat/e5-small-v2`. The supplied archive
 did not record the model behind its OpenAI embedding condition; the canonical
 identifier is therefore `openai/embedding-model-unspecified`. The importer
 preserves that uncertainty and no OpenAI embedding model name should be inferred.
+The ContractNLI OpenAI retrieval is a pure OpenAI-embedding run and is
+normalized to this canonical identifier before packaging.
 The portable normalized retrieval files are under
 `data/<dataset>/retrieval/`; `scripts/import_neural_results.py` documents the
 archive schema and `scripts/score_neural_results.py` performs exact normalized
@@ -102,6 +104,13 @@ All ContractNLI summaries expose only those independent judge outputs. The
 internal deterministic mapping of the dual label is an integrity aid, not a
 public evaluation metric, and is intentionally absent from public summaries.
 
+The E5 and OpenAI retrievals use the same 6,173-question
+dual-label prompt and the same Gemini 2.5 Flash and GPT-4o-mini generators.
+They are independently judged by Haiku 4.5 binary and Sonnet 4 on the 1--5
+scale. All 24,692 embedding-retrieval generations and 49,384 judgments are
+complete with no final errors or fallbacks. Their resumable artifacts are under
+`artifacts/e2e/embedding-retrievals/contractnli/`.
+
 ## BioASQ and FinQA generation and judging
 
 The final independent-judge matrices use `google/gemini-2.5-flash` through
@@ -129,6 +138,15 @@ JSON-only prompt with local schema validation because its available OpenRouter
 route does not accept the structured-output parameter. A binary result is
 `CORRECT` or `INCORRECT`; the scale result is an integer score from 1 through 5
 plus a concise reason.
+
+For the E5 and OpenAI retrieval conditions, both Gemini 2.5 Flash and
+`openai/gpt-4o-mini` were regenerated through OpenRouter with
+`grounded-answer-v2-openrouter`. Haiku 4.5 supplies the binary verdict and
+Sonnet 4 supplies the 1--5 score. BioASQ contains 17,548 such generations and
+35,096 judgments; FinQA contains 25,004 generations and 50,008 judgments.
+Every embedding-retrieval generation and judgment completed without a final
+error or fallback. These artifacts live under
+`artifacts/e2e/embedding-retrievals/{bioasq,finqa}/`.
 
 The BioASQ Sonnet 4.5 provider declined 42 Gemini judgments and 56 GPT-4o-mini
 judgments with `content_filter` on benign benchmark questions involving
@@ -168,6 +186,8 @@ adjudication. Their artifacts retain the historical prompt-version metadata.
   `scripts/run_gpt4o_independent_judges.py`.
 - Run/resume ContractNLI E2E with `scripts/contractnli/generate.py` and
   `scripts/contractnli/judge.py`.
+- Run/resume the complete E5/OpenAI embedding E2E matrix with
+  `scripts/run_embedding_e2e_matrix.py`.
 - Validate identities, coverage, errors, summaries, and hosting limits with
   `scripts/validate_package.py`.
 - Regenerate or check file hashes and dimensions: `scripts/write_manifest.py`.

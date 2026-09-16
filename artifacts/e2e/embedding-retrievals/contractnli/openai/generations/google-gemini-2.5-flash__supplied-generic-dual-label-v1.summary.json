@@ -1,0 +1,11 @@
+{
+  "generator_model": "google/gemini-2.5-flash",
+  "generator_prompt_version": "supplied-generic-dual-label-v1",
+  "questions": 6173,
+  "generation_errors": 0,
+  "parsed_labels": 0,
+  "label_parse_rate": 0.0,
+  "label_correct": 0,
+  "label_accuracy": 0.0,
+  "selection_metric": false
+}

@@ -1,0 +1,3 @@
+dataset,retrieval_method,generator_model,judge_model,judge_mode,questions,generation_errors,judge_errors,judge_fallbacks,judged_questions,input_tokens,output_tokens,correct,accuracy
+bioasq,e5,openai/gpt-4o-mini,anthropic/claude-haiku-4.5,binary,4387,0,0,0,4387,2123126,552226,3396,0.7741053111465694
+bioasq,openai,openai/gpt-4o-mini,anthropic/claude-haiku-4.5,binary,4387,0,0,0,4387,2125494,554511,3395,0.7738773649418738

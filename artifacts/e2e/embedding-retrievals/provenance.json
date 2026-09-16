@@ -1,0 +1,19 @@
+{
+  "scope": "E5 and supplied OpenAI embedding retrieval E2E",
+  "datasets": {
+    "contractnli": 6173,
+    "bioasq": 4387,
+    "finqa": 6251
+  },
+  "generators": [
+    "google/gemini-2.5-flash",
+    "openai/gpt-4o-mini"
+  ],
+  "judges": {
+    "anthropic/claude-haiku-4.5": "binary",
+    "anthropic/claude-sonnet-4": "scale-1-5"
+  },
+  "concurrency_per_cell": 8,
+  "contractnli_prompt_version": "supplied-generic-dual-label-v1",
+  "qa_prompt_version": "grounded-answer-v2-openrouter"
+}
